@@ -6,7 +6,7 @@
                     <div class="col-12 col-md-6 d-flex flex-column mb-4 mb-md-0">
                         <div class="row flex-grow-1">
                             <div class="col-12 mb-4 d-flex flex-column">
-                                <a href="" class="trigger trigger_big flex-grow-1">
+                                <a href="#" class="trigger trigger_big flex-grow-1">
                                     <svg class="trigger__icon" width="100" height="100" aria-hidden="true">
                                         <use xlink:href="#icon_assortment"></use>
                                     </svg>
@@ -21,7 +21,7 @@
                             <div class="col-12 d-flex flex-column">
                                 <div class="row flex-grow-1">
                                     <div class="col-6 d-flex flex-column">
-                                        <a href="" class="trigger flex-grow-1">
+                                        <a href="#" class="trigger flex-grow-1">
                                             <svg class="trigger__icon" width="50" height="50" aria-hidden="true">
                                                 <use xlink:href="#icon_delivery"></use>
                                             </svg>
@@ -34,7 +34,7 @@
                                         </a>
                                     </div>
                                     <div class="col-6 d-flex flex-column">
-                                        <a href="" class="trigger flex-grow-1">
+                                        <a href="#" class="trigger flex-grow-1">
                                             <svg class="trigger__icon" width="50" height="50" aria-hidden="true">
                                                 <use xlink:href="#icon_return"></use>
                                             </svg>
@@ -53,7 +53,7 @@
                     <div class="col-12 col-md-6 d-flex flex-column">
                         <div class="row mb-4 flex-grow-1">
                             <div class="col-6 d-flex flex-column">
-                                <a href="" class="trigger flex-grow-1">
+                                <a href="#" class="trigger flex-grow-1">
                                     <svg class="trigger__icon" width="50" height="50" aria-hidden="true">
                                         <use xlink:href="#icon_calc_trigger"></use>
                                     </svg>
@@ -66,7 +66,7 @@
                                 </a>
                             </div>
                             <div class="col-6 d-flex flex-column">
-                                <a href="" class="trigger flex-grow-1">
+                                <a href="#" class="trigger flex-grow-1">
                                     <svg class="trigger__icon" width="50" height="50" aria-hidden="true">
                                         <use xlink:href="#icon_faq"></use>
                                     </svg>
@@ -82,7 +82,7 @@
 
                         <div class="row flex-grow-1">
                             <div class="col-6 d-flex flex-column">
-                                <a href="" class="trigger flex-grow-1">
+                                <a href="#" class="trigger flex-grow-1">
                                     <svg class="trigger__icon" width="50" height="50" aria-hidden="true">
                                         <use xlink:href="#icon_sale"></use>
                                     </svg>
@@ -95,7 +95,7 @@
                                 </a>
                             </div>
                             <div class="col-6 d-flex flex-column">
-                                <a href="" class="trigger flex-grow-1">
+                                <a href="#" class="trigger flex-grow-1">
                                     <svg class="trigger__icon" width="50" height="50" aria-hidden="true">
                                         <use xlink:href="#icon_sale"></use>
                                     </svg>
@@ -112,14 +112,16 @@
                 </div>
             </div>
             <div class="col-3 d-none d-lg-flex">
-                <a href="" title="Перейти к странице акции" class="sale-banner">
-                    <img src="<?= SITE_TEMPLATE_PATH ?>/images/demo/alert_1.jpg" alt="" class="sale-banner__image">
+                <a href="#" title="Перейти к странице акции" class="sale-banner">
+                    <img src="<?= SITE_TEMPLATE_PATH ?>/images/demo/alert.png" alt="" class="sale-banner__image">
                     <span class="sale-banner__content">
-                        <span class="sale-banner__title" style="color:#e90008">
+                        <span class="sale-banner__title pb-2" style="color:#e90008; font-size: 18px;font-weight: 700;">
                             Уважаемые посетители!
                         </span>
-                        <span class="sale-banner__time">
+                        <span class="sale-banner__time" style=" font-size: 1em; font-weight:600;">
                             Сайт находится в режиме разработки.
+                            Наличие и актуальную стоимость уточнять у менеджеров.
+                            <br>
                             Приносим свои извинения за не удобства.
                         </span>
                     </span>
@@ -538,48 +540,6 @@
 //                    ]
 //                );
 //                ?>
-                <?
-                if (CModule::IncludeModule("iblock")):
-                // ID инфоблока из которого выводим элементы
-                $iblock_id = 107;
-                $my_slider = CIBlockElement::GetList(
-                // Сортировка элементов
-                    array("ID" => "ASC"),
-                    array("IBLOCK_ID" => $iblock_id, "ACTIVE" => "Y", "ACTIVE_DATE" => "Y"),
-                    // Перечисляесм все свойства элементов, которые планируем выводить
-                    array('PROPERTY_IMG_SVG','PROPERTY_MODAL_CONTENT','PROPERTY_TITLE','DETAIL_TEXT','DETAIL_TEXT_TYPE')    );
-                if ($ar_fields = $my_slider->GetNext()) : ?>
-                <?
-                //Выводим элемент с залаными свойствами + верстка
-                $img_path = CFile::GetPath($ar_fields['PROPERTY_IMG_SVG_VALUE']);
-
-                ?>
-
-                <? if ($ar_fields['PROPERTY_MODAL_CONTENT_VALUE']=="Баннер") { ?>
-                    <div id="overlay" class="js-overlay-campaign">
-                        <div class="popup_img js-popup-campaign">
-                            <img src="<? echo $img_path ?>"/>
-                            <button class="spsb">Больше не показывать</button>
-                            <div class="close-popup_img js-close-campaign"></div>
-                        </div>
-
-                    </div>
-                <? }
-                elseif ($ar_fields['PROPERTY_MODAL_CONTENT_VALUE']=="Текстовое сообщение") { ?>
-                <div id="overlay" class="js-overlay-campaign">
-                    <div class="popup_img popup-text js-popup-campaign">
-
-                        <div class="popup-title"><?echo $ar_fields['PROPERTY_TITLE_VALUE']?></div>
-                        <div class="popup-content">
-                            <div class="popup-subtitle"><?echo $ar_fields['DETAIL_TEXT']?></div>
-                            <button class="spsb">Больше не показывать</button>
-                        </div>
-                        <div class="close-popup_img js-close-campaign"></div>
-                    </div>
-                    <? } ?>
-
-                    <? endif; ?>
-                    <? endif; ?>
             </div>
 <!--            <div class="col-12 col-md-3 d-flex order-0 order-md-1 mb-4 mb-md-0">-->
 <!--                <a href="" title="Перейти к странице акции" class="sale-banner">-->

@@ -27,7 +27,7 @@
                 ?>
                 <div class="col-12 col-md-3 col-md-6 col-lg-2 mb-2">
                     <div class="partners__item">
-                        <a class="partners__url" href="<?$partner_url?>" target="_blank">
+                        <a class="partners__url" href="<?=$partner_url?>" target="_blank">
                             <img src="<?=$img_path?>" alt="">
                         </a>
                     </div>

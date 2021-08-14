@@ -50,21 +50,27 @@ while ($arItem = $dbBasketItems->GetNext())
 <!--	</div>-->
 	<div class="col-8 col-xl-6 border-start border-2 d-flex justify-content-end w-100">
         <?$APPLICATION->IncludeComponent(
-            "bitrix:sale.basket.basket.line",
-            "profnastil",
-            Array(
-                "PATH_TO_BASKET" => SITE_DIR."personal/cart/",
-                "PATH_TO_PERSONAL" => SITE_DIR."personal/",
-                "PATH_TO_PROFILE" => SITE_DIR."personal/",
-                "PATH_TO_REGISTER" => SITE_DIR."login/",
-                "POSITION_FIXED" => "N",
-                "SHOW_AUTHOR" => "N",
-                "SHOW_EMPTY_VALUES" => "Y",
-                "SHOW_NUM_PRODUCTS" => "Y",
-                "SHOW_PERSONAL_LINK" => "N",
-                "SHOW_PRODUCTS" => "N",
-                "SHOW_TOTAL_PRICE" => "Y"
-            )
-        );?>
+	"bitrix:sale.basket.basket.line", 
+	"profnastil", 
+	array(
+		"PATH_TO_BASKET" => SITE_DIR."personal/cart/",
+		"PATH_TO_PERSONAL" => SITE_DIR."personal/",
+		"PATH_TO_PROFILE" => SITE_DIR."personal/",
+		"PATH_TO_REGISTER" => SITE_DIR."login/",
+		"POSITION_FIXED" => "N",
+		"SHOW_AUTHOR" => "N",
+		"SHOW_EMPTY_VALUES" => "Y",
+		"SHOW_NUM_PRODUCTS" => "Y",
+		"SHOW_PERSONAL_LINK" => "N",
+		"SHOW_PRODUCTS" => "N",
+		"SHOW_TOTAL_PRICE" => "Y",
+		"COMPONENT_TEMPLATE" => "profnastil",
+		"PATH_TO_ORDER" => SITE_DIR."personal/order/make/",
+		"PATH_TO_AUTHORIZE" => "",
+		"SHOW_REGISTRATION" => "Y",
+		"HIDE_ON_BASKET_PAGES" => "N"
+	),
+	false
+);?>
 	</div>
 </nav>
