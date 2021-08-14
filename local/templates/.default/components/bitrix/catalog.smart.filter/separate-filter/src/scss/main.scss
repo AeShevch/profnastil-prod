@@ -1,0 +1,33 @@
+@import "../../../../../../../profnastil-redesign/src/scss/1-vendors/bootstrap-custom";@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins";
+
+.separate-filter {
+  background-color: var(--white);
+  border-radius: var(--base-radius);
+  box-shadow: var(--base-shadow);
+  overflow: hidden;
+  font-size: 1rem;
+
+  &__title {
+    font-weight: 700;
+    font-size: 1.25em;
+    margin-bottom: .8em;
+  }
+
+  &__banner {
+    height: 220px;
+  }
+
+  &__inner {
+    padding: 2em 1em;
+
+    @include media-breakpoint-up(lg) {
+      padding: 1em 2em;
+    }
+  }
+
+  &__tablist {
+    margin-bottom: 2em!important;
+  }
+}

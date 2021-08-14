@@ -1,0 +1,54 @@
+$templatePath: '/local/templates/profnastil-redesign';
+
+/* open-sans-regular - latin_cyrillic */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('#{$templatePath}/fonts/open-sans-v18-latin_cyrillic-regular.eot'); /* IE9 Compat Modes */
+  src: local(''),
+  url('#{$templatePath}/fonts/open-sans-v18-latin_cyrillic-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('#{$templatePath}/fonts/open-sans-v18-latin_cyrillic-regular.woff2') format('woff2'), /* Super Modern Browsers */
+  url('#{$templatePath}/fonts/open-sans-v18-latin_cyrillic-regular.woff') format('woff'), /* Modern Browsers */
+  url('#{$templatePath}/fonts/open-sans-v18-latin_cyrillic-regular.ttf') format('truetype'); /* Safari, Android, iOS */
+}
+
+/* open-sans-600 - latin_cyrillic */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('#{$templatePath}/fonts/open-sans-v18-latin_cyrillic-600.eot'); /* IE9 Compat Modes */
+  src: local(''),
+  url('#{$templatePath}/fonts/open-sans-v18-latin_cyrillic-600.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('#{$templatePath}/fonts/open-sans-v18-latin_cyrillic-600.woff2') format('woff2'), /* Super Modern Browsers */
+  url('#{$templatePath}/fonts/open-sans-v18-latin_cyrillic-600.woff') format('woff'), /* Modern Browsers */
+  url('#{$templatePath}/fonts/open-sans-v18-latin_cyrillic-600.ttf') format('truetype'); /* Safari, Android, iOS */
+}
+
+/* open-sans-700 - latin_cyrillic */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('#{$templatePath}/fonts/open-sans-v18-latin_cyrillic-700.eot'); /* IE9 Compat Modes */
+  src: local(''),
+  url('#{$templatePath}/fonts/open-sans-v18-latin_cyrillic-700.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('#{$templatePath}/fonts/open-sans-v18-latin_cyrillic-700.woff2') format('woff2'), /* Super Modern Browsers */
+  url('#{$templatePath}/fonts/open-sans-v18-latin_cyrillic-700.woff') format('woff'), /* Modern Browsers */
+  url('#{$templatePath}/fonts/open-sans-v18-latin_cyrillic-700.ttf') format('truetype'); /* Safari, Android, iOS */
+}
+
+html {
+  font-size: var(--base-font-size);
+  font-weight: 400;
+  line-height: var(--base-line-hight);
+  font-family: var(--base-font);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-size-adjust: 100%;
+}

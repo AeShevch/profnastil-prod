@@ -1,0 +1,45 @@
+.button {
+  @include resetBtn;
+  white-space: nowrap;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  height: 2.25em;
+  padding: 0 1em;
+  background-color: var(--main);
+  border: 1px solid var(--main);
+  border-radius: var(--base-radius);
+  color: var(--secondary);
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: border-color var(--transition-time);
+
+  &_secondary {
+    background-color: var(--secondary);
+    font-weight: 700;
+    padding: 1em 2em;
+    text-decoration: none;
+    border: 1px solid var(--secondary);
+    color: var(--white);
+
+    &:hover {
+      color: var(--main);
+    }
+  }
+
+  &_outlined {
+    background-color: var(--white);
+    border-width: 3px;
+    
+    &:hover {
+      background-color: var(--main);
+    }
+  }
+
+  & > *:first-child {
+    margin-right: .5em;
+  }
+
+  @include focus;
+}
