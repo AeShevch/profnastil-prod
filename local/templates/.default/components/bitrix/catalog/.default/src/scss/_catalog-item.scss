@@ -6,7 +6,7 @@
 
   position: relative;
   padding: var(--padding-top) var(--padding-horizontal) var(--padding-bottom);
-  border: 1px solid transparent;
+  border: 1px solid #f8f8f8;
   font-size: 1rem;
   transition: border-color var(--transition-time);
   display: flex;
@@ -30,8 +30,14 @@
   &__image {
     display: flex;
     justify-content: center;
-    margin-top: 2em;
+    margin-top: .5em;
     height: 200px;
+    background-color: var(--main-bg-color);
+    border-radius: var(--base-radius);
+
+    img {
+      mix-blend-mode: multiply;
+    }
   }
 
   &__link {

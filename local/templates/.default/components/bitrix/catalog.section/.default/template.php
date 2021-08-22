@@ -113,7 +113,7 @@ $this->setFrameMode(true);
 
 <!-- Section products list  -->
 <section class="catalog__list" id="product-listings">
-    <div class="section mb-3 pt-3 pb-3 last">
+    <div class="section mb-3 pt-3 pb-3 last section_padding">
         <ul class="row list-reset last" aria-labelledby="section-title">
             <? foreach ($arResult["ITEMS"] as $cell => $arElement): ?>
                 <?
@@ -251,7 +251,7 @@ $this->setFrameMode(true);
                         <!-- Product name -->
 
                         <a href="<?= $arElement["DETAIL_PAGE_URL"] ?>"
-                           class="catalog-item__link mb-3 mt-2"
+                           class="catalog-item__link mb-2 mt-3"
                            title="Перейти к товару «<?= $arElement["NAME"] ?>">
                             <h3 class="catalog-item__title"
                                 id="catalog-item-title-<?= $this->GetEditAreaId($arElement['ID']); ?>">
