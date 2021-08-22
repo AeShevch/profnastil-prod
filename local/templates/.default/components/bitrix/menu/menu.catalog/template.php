@@ -22,9 +22,6 @@ if (empty($arResult["ALL_ITEMS"]))
       $index = 0;
       foreach ($arResult["MENU_STRUCTURE"] as $itemID => $arColumns):
           $currentSection = $arResult["ALL_ITEMS"][$itemID];
-//          echo "<pre>";
-//          print_r($currentSection);
-//          echo "</pre>";
           $img = [];
           if(intval($currentSection["PARAMS"]["DETAIL_PICTURE"])>0 && $currentSection["DEPTH_LEVEL"]==1){
               $img = CFile::ResizeImageGet($currentSection["PARAMS"]["DETAIL_PICTURE"], array('width'=>24, 'height'=>24),

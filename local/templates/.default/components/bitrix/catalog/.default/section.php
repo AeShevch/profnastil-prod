@@ -336,39 +336,6 @@ $this->setFrameMode(true);
     </section>
 
     <!-- Recently watched products -->
-<?php
-// Демо данные недавно просмотренных
-$recentlyWatchedProducts = [
-    [
-        "NAME" => "Смеситель для ванны и душа GROHE BauEdge 23334000 с коротким изливом однорычажный без лейки",
-        "LINK" => "/",
-        "IMAGE" => "/images/demo/product-2.jpg",
-        "PRICE" => "3 000",
-    ], [
-        "NAME" => "Смеситель для ванны и душа GROHE BauEdge 23334000 с коротким изливом однорычажный без лейки",
-        "LINK" => "/",
-        "IMAGE" => "/images/demo/product-2.jpg",
-        "PRICE" => "70 000",
-        "OLD_PRICE" => "200 000"
-    ], [
-        "NAME" => "Смеситель для ванны и душа GROHE BauEdge 23334000 с коротким изливом однорычажный без лейки",
-        "LINK" => "/",
-        "IMAGE" => "/images/demo/product-2.jpg",
-        "PRICE" => "11 000",
-    ], [
-        "NAME" => "Смеситель для ванны и душа GROHE BauEdge 23334000 с коротким изливом однорычажный без лейки",
-        "LINK" => "/",
-        "IMAGE" => "/images/demo/product-2.jpg",
-        "PRICE" => "15 000",
-    ], [
-        "NAME" => "Смеситель для ванны и душа GROHE BauEdge 23334000 с коротким изливом однорычажный без лейки",
-        "LINK" => "/",
-        "IMAGE" => "/images/demo/product-2.jpg",
-        "PRICE" => "34 000",
-    ],
-];
-?>
-    <!---->
 <? $APPLICATION->IncludeComponent(
     "bitrix:catalog.products.viewed",
     "test",

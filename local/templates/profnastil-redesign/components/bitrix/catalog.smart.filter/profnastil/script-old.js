@@ -269,13 +269,13 @@ JCSmartFilter.prototype.values2post = function (values)
 			}
 			else if(pp == 0)
 			{
-				//No index specified - so take the next integer
+				//No index.php specified - so take the next integer
 				current = current[name];
 				values[i].name = '' + current.length;
 			}
 			else
 			{
-				//Now index name becomes and name and we go deeper into the array
+				//Now index.php name becomes and name and we go deeper into the array
 				current = current[name];
 				values[i].name = rest.substring(0, pp) + rest.substring(pp+1);
 			}

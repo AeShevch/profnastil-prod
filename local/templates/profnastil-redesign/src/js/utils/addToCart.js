@@ -1,5 +1,4 @@
 import { fetchAddToCart } from "../api/api-actions/fetchAddToCart";
-import { updateMiniCartPrice } from "./updateMiniCartPrice";
 import { moveImageToCart } from "./moveImageToCart";
 
 export const addToCart = (evt, cartPriceElement) => {
@@ -13,19 +12,14 @@ export const addToCart = (evt, cartPriceElement) => {
   clickedButton.disabled = true;
 
   // Getting data
-  const { ajaxUrl, price } = clickedButton.dataset;
+  const { id } = clickedButton.dataset;
   const quantity = quantityInput ? quantityInput.value : 1;
-  const prevCartPrice = parseInt(
-    cartPriceElement.textContent.replace(/[^+\d]/g, ``),
-    10
-  );
 
   // Sending data to server
-  fetchAddToCart(ajaxUrl, quantity).then(res => {
+  fetchAddToCart(id, quantity).then(res => {
     if (res.STATUS === `OK`) {
       // Updating mini cart
-      const newCartPrice = prevCartPrice + price * quantity;
-      updateMiniCartPrice(newCartPrice, cartPriceElement);
+      BX.onCustomEvent('OnBasketChange');
       moveImageToCart(productContainer, cartPriceElement);
     }
 

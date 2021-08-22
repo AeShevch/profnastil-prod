@@ -22,7 +22,7 @@ export default class Api {
     return this._load({
       url,
       method: Method.POST,
-      body: payload,
+      body: JSON.stringify(payload),
       headers: headers,
     }).then(Api.toJSON);
   }

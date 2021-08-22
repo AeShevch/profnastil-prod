@@ -19,6 +19,8 @@ $curPage = $APPLICATION->GetCurPage(true);
   <link rel="preload" href="<?=SITE_TEMPLATE_PATH?>/fonts/open-sans-v18-latin_cyrillic-700.woff2"
         as="font" type="font/woff2" crossorigin="anonymous">
 
+<?php    CJSCore::Init(array("jquery")); ?>
+
     <script data-skip-moving="true">
         window.bxConstants = {
             SITE_TEMPLATE_PATH: "<?= SITE_TEMPLATE_PATH ?>",

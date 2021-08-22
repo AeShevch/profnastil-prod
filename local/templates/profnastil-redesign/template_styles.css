@@ -85,7 +85,10 @@
     to {transform: rotate(360deg);}
 }
 /*главная*/
-
+.price-download:hover .price-download__popup{
+    display:block !important;
+    position:absolute;
+}
 .trigger_big{
     padding: 4.30em 1.5em;
 }
@@ -97,4 +100,12 @@
 }
 .submenu-popup__sub a:hover {
     color: #f44336;
+}
+/*#enter_lc{*/
+/*    fill: white;*/
+/*    transition: .15s;*/
+/*}*/
+.header__button:hover #enter_lc{
+    fill: #ffda33;
+    transition: .15s;
 }

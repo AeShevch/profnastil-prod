@@ -140,6 +140,7 @@ $SPECS_TO_EXCLUDE = [
                             <button aria-label="Добавить в корзину"
                                     class="product-controls__add-to-cart button button_size_high w-100 js-add-to-cart-button"
                                     data-ajax-url="<?= $arResult["ADD_URL"] ?>"
+                                    data-id="<?= $arResult["ID"] ?>"
                                     data-price="<?php echo $arResult["PRICES"]["Типовые правила продаж"]["VALUE"] ?>"
                                     type="button">
                                 Добавить в корзину

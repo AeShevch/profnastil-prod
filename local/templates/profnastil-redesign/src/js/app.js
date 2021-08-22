@@ -1,10 +1,8 @@
 import "../scss/main.scss";
 import Vue from "vue";
-import { Tab } from "bootstrap";
-import FixedHeader from "./fixed-header/fixed-header";
+import { Tab, Modal } from "bootstrap";
 import stopPropagationOnElements from "./utils/stopPropagationOnElements";
 import StickySidebar from "sticky-sidebar";
-import { fetchAddToCart } from "./api/api-actions/fetchAddToCart";
 import { addToCart } from "./utils/addToCart";
 
 window.Vue = Vue;

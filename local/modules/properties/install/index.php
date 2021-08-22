@@ -20,7 +20,7 @@
 			$arModuleVersion = [];
 
 			$path = str_replace("\\", "/", __FILE__);
-			$path = substr($path, 0, strlen($path) - strlen("/index.php"));
+			$path = substr($path, 0, strlen($path) - strlen("/index.php.php"));
 			include($path . "/version.php");
 
 			if(\is_array($arModuleVersion) && \array_key_exists("VERSION", $arModuleVersion))

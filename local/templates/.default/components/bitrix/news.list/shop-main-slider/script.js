@@ -121,7 +121,7 @@ var defaults = {
   type: 'slider',
 
   /**
-   * Start at specific slide number defined with zero-based index.
+   * Start at specific slide number defined with zero-based index.php.
    *
    * @type {Number}
    */
@@ -139,7 +139,7 @@ var defaults = {
    *
    * Available inputs:
    * `center` - Current slide will be always focused at the center of a track.
-   * `0,1,2,3...` - Current slide will be focused on the specified zero-based index.
+   * `0,1,2,3...` - Current slide will be focused on the specified zero-based index.php.
    *
    * @type {String|Number}
    */
@@ -923,7 +923,7 @@ var Glide = function () {
     }
 
     /**
-     * Gets current index of the slider.
+     * Gets current index.php of the slider.
      *
      * @return {Object}
      */
@@ -935,7 +935,7 @@ var Glide = function () {
     }
 
     /**
-     * Sets current index a slider.
+     * Sets current index.php a slider.
      *
      * @return {Object}
      */
@@ -1036,7 +1036,7 @@ function Run (Glide, Components, Events) {
 
 
     /**
-     * Calculates current index based on defined move.
+     * Calculates current index.php based on defined move.
      *
      * @return {Void}
      */
@@ -1564,7 +1564,7 @@ function Move (Glide, Components, Events) {
 
 
     /**
-     * Calculates a movement value based on passed offset and currently active index.
+     * Calculates a movement value based on passed offset and currently active index.php.
      *
      * @param  {Number} offset
      * @return {Void}
@@ -1640,8 +1640,8 @@ function Move (Glide, Components, Events) {
 
   /**
    * Make movement to proper slide on:
-   * - before build, so glide will start at `startAt` index
-   * - on each standard run to move to newly calculated index
+   * - before build, so glide will start at `startAt` index.php
+   * - on each standard run to move to newly calculated index.php
    */
   Events.on(['build.before', 'run'], function () {
     Move.make();
@@ -1842,7 +1842,7 @@ function Build (Glide, Components, Events) {
 
   /**
    * Swap active class of current slide:
-   * - after each move to the new index
+   * - after each move to the new index.php
    */
   Events.on('move.after', function () {
     Build.activeClass();
@@ -2351,7 +2351,7 @@ function Peeking (Glide, Components) {
 function Focusing (Glide, Components) {
   return {
     /**
-     * Modifies passed translate value with index in the `focusAt` setting.
+     * Modifies passed translate value with index.php in the `focusAt` setting.
      *
      * @param  {Number} translate
      * @return {Number}
@@ -2438,7 +2438,7 @@ function Translate (Glide, Components, Events) {
 
   /**
    * Set new translate value:
-   * - on move to reflect index change
+   * - on move to reflect index.php change
    * - on updating via API to reflect possible changes in options
    */
   Events.on('move', function (context) {
@@ -2595,7 +2595,7 @@ function Transition (Glide, Components, Events) {
 
   /**
    * Disable transition:
-   * - before initial build to avoid transitioning from `0` to `startAt` index
+   * - before initial build to avoid transitioning from `0` to `startAt` index.php
    * - while resizing window and recalculating dimentions
    * - on jumping from offset transition at start and end edges in `carousel` type
    */
@@ -3363,8 +3363,8 @@ function controls (Glide, Components, Events) {
 
   /**
    * Swap active class of current navigation item:
-   * - after mounting to set it to initial index
-   * - after each move to the new index
+   * - after mounting to set it to initial index.php
+   * - after each move to the new index.php
    */
   Events.on(['mount.after', 'move.after'], function () {
     Controls.setActive();

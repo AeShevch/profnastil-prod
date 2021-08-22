@@ -29,7 +29,7 @@ export default class MobileMenusSync {
   }
 
   /**
-   * Opens section in the popup catalog menu by index
+   * Opens section in the popup catalog menu by index.php
    * @param {number} targetSectionIndex
    * @private
    */

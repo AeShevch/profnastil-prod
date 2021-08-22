@@ -3,11 +3,11 @@
         '',
         [
             "Site"                     => "/local/php_interface/classes/Site.php",
-            "CatalogClass"             => "/local/php_interface/classes/CatalogClass.php",
+//            "CatalogClass"             => "/local/php_interface/classes/CatalogClass.php",
             "GeoIp"                    => "/local/php_interface/classes/GeoIp.php",
             "User"                     => "/local/php_interface/classes/User.php",
             'CUtilCustom'              => "/local/php_interface/classes/CUtilCustom.php",
-            "OrderClass"               => "/local/php_interface/classes/OrderClass.php",
+//            "OrderClass"               => "/local/php_interface/classes/OrderClass.php",
             "ElementStringDescription" => "/local/php_interface/classes/ElementStringDescription.php",
         ]
     );

@@ -49,6 +49,7 @@ $oldPrice = str_replace(".00 руб", " р.", $arResult["ITEM"]["PRICES"]["Ти�
         <button
                 title="Добавить товар «<?= $arResult["ITEM"]["NAME"] ?>» в корзину"
                 data-ajax-url="<?= $arResult["ITEM"]["ADD_URL"] ?>"
+                data-id="<?= $arResult["ITEM"]["ID"] ?>"
                 data-price="<?= $arResult["ITEM"]["PRICES"]["Типовые правила продаж"]["VALUE"] ?>"
                 class="product-card__buy js-add-to-cart-button"
                 type="button">

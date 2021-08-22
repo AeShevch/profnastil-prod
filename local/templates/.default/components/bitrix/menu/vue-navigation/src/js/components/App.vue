@@ -63,7 +63,6 @@ import GoBackButton from "./GoBackButton";
 import Projects from "./Projects";
 
 const menuLinks = window.menuItems;
-console.log(menuLinks);
 export default {
   mixins: [smoothReflow],
 
@@ -110,7 +109,6 @@ export default {
     },
 
     getLevel(path, label, items) {
-      console.log(items);
       return {
         path: path,
         label: label,

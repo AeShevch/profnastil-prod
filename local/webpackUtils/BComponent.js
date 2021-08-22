@@ -207,7 +207,6 @@ class BComponent {
 		}
 
 		if(_.isEmpty(folder)){
-		  console.log(folder);
 			throw new Error(folder + 'component ' + name.join(':') + ' is not exist', 404);
 		}
 

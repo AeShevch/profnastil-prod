@@ -193,7 +193,7 @@
                 $item         = $basket->createItem('catalog', $arFields['PRODUCT_ID']);
                 $item->setFields(
                     [
-                        'QUANTITY'               => 1,
+                        'QUANTITY'               => $PRODUCTS[$arFields['PRODUCT_ID']]['QUANTITY'],
                         'CURRENCY'               => $currencyCode,
                         'LID'                    => $siteId,
                         'PRODUCT_PROVIDER_CLASS' => '\Bitrix\Catalog\Product\CatalogProvider',

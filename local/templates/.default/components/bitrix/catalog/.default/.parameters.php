@@ -1492,3 +1492,18 @@ else
 		"ADDITIONAL_VALUES" => "Y",
 	);
 }
+
+$arTemplateParameters = Array(
+    "PRODUCT_QUANTITY_VARIABLE" => array(
+        "PARENT" => "URL_TEMPLATES",
+        "NAME" => "Название переменной, в которой передается количество товара",
+        "TYPE" => "STRING",
+        "DEFAULT" => "quantity",
+    ),
+    "USE_PRODUCT_QUANTITY" => array(
+        "PARENT" => "PRICES",
+        "NAME" => "Разрешить указание количества товара",
+        "TYPE" => "CHECKBOX",
+        "DEFAULT" => "N",
+    )
+);

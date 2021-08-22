@@ -16,8 +16,8 @@ $delaydBasketItems = CSaleBasket::GetList(
 	),
 	array()
 );
-
-
+//use Bitrix\Main\UI\Extension;
+//Extension::load('ui.bootstrap4');
 ?>
 
 <header class="header js-header-element d-none d-lg-block" id="header">
@@ -51,12 +51,22 @@ $delaydBasketItems = CSaleBasket::GetList(
 				</div>
 				<div class="col-4">
 					<div class="d-flex justify-content-end">
-						<a href="#" download class="me-2 ps-3 pe-3 header__button button button_secondary">
-							Скачать прайс
-						</a>
-						<a href="/personal/" class="ps-3 pe-3 header__button button button_secondary">
-							Личный кабинет
-						</a>
+                            <button type="button" class="me-2 ps-3 pe-3 header__button button button_secondary btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+                                <svg class="" width="21" height="21">
+                                    <use xlink:href="#iconDownload"></use>
+                                </svg>
+                                Скачать прайс
+                            </button>
+                        <? if (CUser::IsAuthorized()): ?>
+                            <a href="<?=$APPLICATION->GetCurPage() ?>?logout=yes" class="ps-3 pe-3 header__button button button_secondary"><?= CUser::GetFullName(); ?></a>
+                        <?else:?>
+                            <a href="/personal/orders/" class="ps-3 pe-3 header__button button button_secondary">
+                                <svg class="" width="21" height="21">
+                                    <use xlink:href="#iconEnter_lc"></use>
+                                </svg>
+                                Войти
+                            </a>
+                        <?endif;?>
 					</div>
 				</div>
 			</div>
@@ -93,26 +103,26 @@ $delaydBasketItems = CSaleBasket::GetList(
 						<div class="catalog-menu__dropdown dropdown-menu js-catalog-dropdown"
 							 aria-labelledby="dropdownMenuButton">
 							<? $APPLICATION->IncludeComponent(
-	"bitrix:menu", 
-	"menu.catalog", 
-	array(
-		"MENU_CACHE_TYPE" => "A",
-		"MENU_CACHE_TIME" => "36000000",
-		"MENU_CACHE_USE_GROUPS" => "N",
-		"MENU_THEME" => "site",
-		"CACHE_SELECTED_ITEMS" => "N",
-		"MENU_CACHE_GET_VARS" => array(
-		),
-		"MAX_LEVEL" => "3",
-		"CHILD_MENU_TYPE" => "left",
-		"USE_EXT" => "Y",
-		"DELAY" => "N",
-		"ALLOW_MULTI_SELECT" => "N",
-		"COMPONENT_TEMPLATE" => "menu.catalog",
-		"ROOT_MENU_TYPE" => "left"
-	),
-	false
-); ?>
+                                "bitrix:menu",
+                                "menu.catalog",
+                                array(
+                                    "MENU_CACHE_TYPE" => "A",
+                                    "MENU_CACHE_TIME" => "36000000",
+                                    "MENU_CACHE_USE_GROUPS" => "N",
+                                    "MENU_THEME" => "site",
+                                    "CACHE_SELECTED_ITEMS" => "N",
+                                    "MENU_CACHE_GET_VARS" => array(
+                                    ),
+                                    "MAX_LEVEL" => "3",
+                                    "CHILD_MENU_TYPE" => "left",
+                                    "USE_EXT" => "Y",
+                                    "DELAY" => "N",
+                                    "ALLOW_MULTI_SELECT" => "N",
+                                    "COMPONENT_TEMPLATE" => "menu.catalog",
+                                    "ROOT_MENU_TYPE" => "left"
+                                ),
+                                false
+                            ); ?>
 						</div>
 					</div>
 				</div>

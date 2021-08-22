@@ -1,4 +1,5 @@
 <section class="hero">
+    <?$APPLICATION->IncludeFile('components/customs/priceDownload/index.php');?>
     <div class="container">
         <div class="row">
             <div class="col-12 col-lg-9 d-flex flex-column">
@@ -159,7 +160,7 @@
 		"DETAIL_URL" => "/catalog/#SECTION_CODE_PATH#/#ELEMENT_CODE#/",
 		"DISPLAY_COMPARE" => "N",
 		"ELEMENT_COUNT" => "32",
-		"ELEMENT_SORT_FIELD" => "sort",
+		"ELEMENT_SORT_FIELD" => "RAND",
 		"ELEMENT_SORT_FIELD2" => "id",
 		"ELEMENT_SORT_ORDER" => "asc",
 		"ELEMENT_SORT_ORDER2" => "desc",
@@ -256,7 +257,7 @@
 		"DETAIL_URL" => "/catalog/#SECTION_CODE_PATH#/#ELEMENT_CODE#/",
 		"DISPLAY_COMPARE" => "N",
 		"ELEMENT_COUNT" => "32",
-		"ELEMENT_SORT_FIELD" => "sort",
+		"ELEMENT_SORT_FIELD" => "RAND",
 		"ELEMENT_SORT_FIELD2" => "id",
 		"ELEMENT_SORT_ORDER" => "asc",
 		"ELEMENT_SORT_ORDER2" => "desc",
@@ -387,7 +388,7 @@
 		"DETAIL_URL" => "/catalog/#SECTION_CODE_PATH#/#ELEMENT_CODE#/",
 		"DISPLAY_COMPARE" => "N",
 		"ELEMENT_COUNT" => "18",
-		"ELEMENT_SORT_FIELD" => "sort",
+		"ELEMENT_SORT_FIELD" => "RAND",
 		"ELEMENT_SORT_FIELD2" => "id",
 		"ELEMENT_SORT_ORDER" => "asc",
 		"ELEMENT_SORT_ORDER2" => "desc",
@@ -474,7 +475,9 @@
 <section class="pt-4 pb-4">
     <?$APPLICATION->IncludeFile('components/customs/ourPartners/index.php');?>
 </section>
-
+<section class="pt-4 pb-4">
+    <?$APPLICATION->IncludeFile('components/customs/priceDownload/index.php');?>
+</section>
 <section class="pt-4 pb-4">
     <div class="container">
         <div class="row">

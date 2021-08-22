@@ -1,5 +1,5 @@
-import RangeInput from "../../../profnastil/src/js/range-input";
+// import RangeInput from "../../../profnastil/src/js/range-input";
 
-document.addEventListener(`DOMContentLoaded`, () => {
-  new RangeInput(`.js-range-filter-mobile`).init();
-});
+// document.addEventListener(`DOMContentLoaded`, () => {
+//   new RangeInput(`.js-range-filter-mobile`).init();
+// });

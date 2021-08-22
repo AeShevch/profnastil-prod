@@ -1,5 +1,5 @@
-import RangeInput from "./range-input";
+// import RangeInput from "./range-input";
 
-document.addEventListener(`DOMContentLoaded`, () => {
-  new RangeInput(`.js-range-filter`).init();
-});
+// document.addEventListener(`DOMContentLoaded`, () => {
+//   new RangeInput(`.js-range-filter`).init();
+// });

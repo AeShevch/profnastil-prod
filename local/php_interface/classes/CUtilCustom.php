@@ -142,7 +142,7 @@ class CUtilCustom
     {
         global $APPLICATION;
         $urlSections = explode('/', $APPLICATION->GetCurDir());
-        return ($urlSections[1] !== '' ? $urlSections[1] : "index") . $prefix;
+        return ($urlSections[1] !== '' ? $urlSections[1] : "index.php") . $prefix;
     }
 
     /**

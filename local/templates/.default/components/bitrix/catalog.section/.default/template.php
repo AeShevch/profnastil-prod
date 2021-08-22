@@ -298,10 +298,10 @@ $this->setFrameMode(true);
                                                 type="button">
                                             –
                                         </button>
-                                        <input id="product-count-input js-product-quantity"
+                                        <input id="product-count-input"
                                                aria-label="Количество товара"
                                                autocomplete="off"
-                                               class="count-field__input"
+                                               class="count-field__input js-product-quantity"
                                                max="<?php // echo $arResult["PRODUCT"]["QUANTITY"] ?>"
                                                min="1"
                                                name="product-count-input"
@@ -322,6 +322,7 @@ $this->setFrameMode(true);
                             <button class="catalog-item__add-to-cart button w-100 js-add-to-cart-button"
                                     id="<? echo $arItemIDs['BUY_LINK']; ?>"
                                     data-ajax-url="<?= $arElement["ADD_URL"] ?>"
+                                    data-id="<?= $arElement["ID"] ?>"
                                     data-price="<?php echo $arElement["PRICES"]["Типовые правила продаж"]["VALUE"] ?>"
                                     type="submit"
                                     name="<? echo $arParams["ACTION_VARIABLE"] . "ADD2BASKET" ?>"

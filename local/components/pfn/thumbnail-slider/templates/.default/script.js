@@ -420,7 +420,7 @@ var keys = Object.keys;
  * IE doesn't support forEach of HTMLCollection.
  *
  * @param {Object}    obj       - An object.
- * @param {function}  callback  - A function handling each value. Arguments are value, property and index.
+ * @param {function}  callback  - A function handling each value. Arguments are value, property and index.php.
  */
 
 function each(obj, callback) {
@@ -885,7 +885,7 @@ var LOOP = 'loop';
  */
 
 var FADE = 'fade';
-;// CONCATENATED MODULE: ./src/js/transitions/slide/index.js
+;// CONCATENATED MODULE: ./src/js/transitions/slide/index.php.js
 /**
  * The component for general slide effect transition.
  *
@@ -933,9 +933,9 @@ var FADE = 'fade';
     /**
      * Start transition.
      *
-     * @param {number}   destIndex - Destination slide index that might be clone's.
-     * @param {number}   newIndex  - New index.
-     * @param {number}   prevIndex - Previous index.
+     * @param {number}   destIndex - Destination slide index.php that might be clone's.
+     * @param {number}   newIndex  - New index.php.
+     * @param {number}   prevIndex - Previous index.php.
      * @param {Object}   coord     - Destination coordinates.
      * @param {function} done      - Callback function must be invoked when transition is completed.
      */
@@ -958,7 +958,7 @@ var FADE = 'fade';
     }
   };
 });
-;// CONCATENATED MODULE: ./src/js/transitions/fade/index.js
+;// CONCATENATED MODULE: ./src/js/transitions/fade/index.php.js
 /**
  * The component for fade transition.
  *
@@ -989,9 +989,9 @@ var FADE = 'fade';
     /**
      * Start transition.
      *
-     * @param {number}    destIndex - Destination slide index that might be clone's.
-     * @param {number}    newIndex  - New index.
-     * @param {number}    prevIndex - Previous index.
+     * @param {number}    destIndex - Destination slide index.php that might be clone's.
+     * @param {number}    newIndex  - New index.php.
+     * @param {number}    prevIndex - Previous index.php.
      * @param {Object}    coord     - Destination coordinates.
      * @param {function}  done      - Callback function must be invoked when transition is completed.
      */
@@ -1010,9 +1010,9 @@ var FADE = 'fade';
     }
   };
   /**
-   * Apply transition style to the slide specified by the given index.
+   * Apply transition style to the slide specified by the given index.php.
    *
-   * @param {number} index - A slide index.
+   * @param {number} index - A slide index.php.
    */
 
   function apply(index) {
@@ -1024,7 +1024,7 @@ var FADE = 'fade';
 
   return Fade;
 });
-;// CONCATENATED MODULE: ./src/js/transitions/index.js
+;// CONCATENATED MODULE: ./src/js/transitions/index.php.js
 /**
  * Export transition components.
  *
@@ -1308,7 +1308,7 @@ var DEFAULTS = {
   clones: 0,
 
   /**
-   * Start index.
+   * Start index.php.
    *
    * @type {number}
    */
@@ -1875,9 +1875,9 @@ var Splide = /*#__PURE__*/function () {
     return this;
   }
   /**
-   * Remove the slide designated by the index.
+   * Remove the slide designated by the index.php.
    *
-   * @param {number} index - A slide index.
+   * @param {number} index - A slide index.php.
    */
   ;
 
@@ -1928,9 +1928,9 @@ var Splide = /*#__PURE__*/function () {
     return this;
   }
   /**
-   * Return the current slide index.
+   * Return the current slide index.php.
    *
-   * @return {number} - The current slide index.
+   * @return {number} - The current slide index.php.
    // */
   ;
 
@@ -1940,9 +1940,9 @@ var Splide = /*#__PURE__*/function () {
       return this._i;
     }
     /**
-     * Set the current slide index.
+     * Set the current slide index.php.
      *
-     * @param {number|string} index - A new index.
+     * @param {number|string} index.php - A new index.php.
      */
     ,
     set: function set(index) {
@@ -2020,7 +2020,7 @@ var Splide = /*#__PURE__*/function () {
 }();
 
 
-;// CONCATENATED MODULE: ./src/js/components/options/index.js
+;// CONCATENATED MODULE: ./src/js/components/options/index.php.js
 /**
  * The component for initializing options.
  *
@@ -2118,8 +2118,8 @@ var STYLE_RESTORE_EVENTS = 'update.slide';
  * The sub component for handling each slide.
  *
  * @param {Splide}  Splide    - A Splide instance.
- * @param {number}  index     - An unique slide index.
- * @param {number}  realIndex - Clones should pass a real slide index.
+ * @param {number}  index.php     - An unique slide index.php.
+ * @param {number}  realIndex - Clones should pass a real slide index.php.
  * @param {Element} slide     - A slide element.
  *
  * @return {Object} - The sub component object.
@@ -2155,14 +2155,14 @@ var STYLE_RESTORE_EVENTS = 'update.slide';
     slide: slide,
 
     /**
-     * Slide index.
+     * Slide index.php.
      *
      * @type {number}
      */
     index: index,
 
     /**
-     * Real index for clones.
+     * Real index.php for clones.
      *
      * @type {number}
      */
@@ -2320,7 +2320,7 @@ var STYLE_RESTORE_EVENTS = 'update.slide';
 
   return Slide;
 });
-;// CONCATENATED MODULE: ./src/js/components/elements/index.js
+;// CONCATENATED MODULE: ./src/js/components/elements/index.php.js
 /**
  * The component for main elements.
  *
@@ -2434,8 +2434,8 @@ var UID_NAME = 'uid';
      * Register a slide to create a Slide object and handle its behavior.
      *
      * @param {Element} slide     - A slide element.
-     * @param {number}  index     - A unique index. This can be negative.
-     * @param {number}  realIndex - A real index for clones. Set -1 for real slides.
+     * @param {number}  index     - A unique index.php. This can be negative.
+     * @param {number}  realIndex - A real index.php for clones. Set -1 for real slides.
      */
     register: function register(slide, index, realIndex) {
       var SlideObject = elements_slide(Splide, index, realIndex, slide);
@@ -2444,7 +2444,7 @@ var UID_NAME = 'uid';
     },
 
     /**
-     * Return the Slide object designated by the index.
+     * Return the Slide object designated by the index.php.
      * Note that "find" is not supported by IE.
      *
      * @return {Object|undefined} - A Slide object if available. Undefined if not.
@@ -2523,7 +2523,7 @@ var UID_NAME = 'uid';
      * Remove a slide from a slider.
      * Need to refresh Splide after removing a slide.
      *
-     * @param index - Slide index.
+     * @param index - Slide index.php.
      */
     remove: function remove(index) {
       dom_remove(this.slides.splice(index, 1)[0]);
@@ -2602,7 +2602,7 @@ var UID_NAME = 'uid';
 
   return Elements;
 });
-;// CONCATENATED MODULE: ./src/js/components/controller/index.js
+;// CONCATENATED MODULE: ./src/js/components/controller/index.php.js
 /**
  * The component for controlling the track.
  *
@@ -2654,9 +2654,9 @@ var floor = Math.floor;
 
     /**
      * Make track run by the given control.
-     * - "+{i}" : Increment the slide index by i.
-     * - "-{i}" : Decrement the slide index by i.
-     * - "{i}"  : Go to the slide whose index is i.
+     * - "+{i}" : Increment the slide index.php by i.
+     * - "-{i}" : Decrement the slide index.php by i.
+     * - "{i}"  : Go to the slide whose index.php is i.
      * - ">"    : Go to next page.
      * - "<"    : Go to prev page.
      * - ">{i}" : Go to page i.
@@ -2670,7 +2670,7 @@ var floor = Math.floor;
     },
 
     /**
-     * Parse the given control and return the destination index for the track.
+     * Parse the given control and return the destination index.php for the track.
      *
      * @param {string} control - A control target pattern.
      *
@@ -2704,7 +2704,7 @@ var floor = Math.floor;
     },
 
     /**
-     * Compute index from the given page number.
+     * Compute index.php from the given page number.
      *
      * @param {number} page - Page number.
      *
@@ -2728,9 +2728,9 @@ var floor = Math.floor;
     },
 
     /**
-     * Compute page number from the given slide index.
+     * Compute page number from the given slide index.php.
      *
-     * @param {number} index - Slide index.
+     * @param {number} index - Slide index.php.
      *
      * @return {number} - A computed page number.
      */
@@ -2750,12 +2750,12 @@ var floor = Math.floor;
     },
 
     /**
-     * Trim the given index according to the current mode.
+     * Trim the given index.php according to the current mode.
      * Index being returned could be less than 0 or greater than the length in Loop mode.
      *
-     * @param {number} index - An index being trimmed.
+     * @param {number} index - An index.php being trimmed.
      *
-     * @return {number} - A trimmed index.
+     * @return {number} - A trimmed index.php.
      */
     trim: function trim(index) {
       if (!isLoop) {
@@ -2766,11 +2766,11 @@ var floor = Math.floor;
     },
 
     /**
-     * Rewind the given index if it's out of range.
+     * Rewind the given index.php if it's out of range.
      *
-     * @param {number} index - An index.
+     * @param {number} index - An index.php.
      *
-     * @return {number} - A rewound index.
+     * @return {number} - A rewound index.php.
      */
     rewind: function rewind(index) {
       var edge = this.edgeIndex;
@@ -2814,9 +2814,9 @@ var floor = Math.floor;
     },
 
     /**
-     * Return the edge index.
+     * Return the edge index.php.
      *
-     * @return {number} - Edge index.
+     * @return {number} - Edge index.php.
      */
     get edgeIndex() {
       var length = Splide.length;
@@ -2833,9 +2833,9 @@ var floor = Math.floor;
     },
 
     /**
-     * Return the index of the previous slide.
+     * Return the index.php of the previous slide.
      *
-     * @return {number} - The index of the previous slide if available. -1 otherwise.
+     * @return {number} - The index.php of the previous slide if available. -1 otherwise.
      */
     get prevIndex() {
       var prev = Splide.index - 1;
@@ -2848,9 +2848,9 @@ var floor = Math.floor;
     },
 
     /**
-     * Return the index of the next slide.
+     * Return the index.php of the next slide.
      *
-     * @return {number} - The index of the next slide if available. -1 otherwise.
+     * @return {number} - The index.php of the next slide if available. -1 otherwise.
      */
     get nextIndex() {
       var next = Splide.index + 1;
@@ -2886,13 +2886,13 @@ var floor = Math.floor;
     return options.focus !== false;
   }
   /**
-   * Return the next or previous page index computed by the page number and current index.
+   * Return the next or previous page index.php computed by the page number and current index.php.
    *
    * @param {number}  number - Specify the page number.
-   * @param {number}  index  - Current index.
+   * @param {number}  index  - Current index.php.
    * @param {boolean} prev   - Prev or next.
    *
-   * @return {number} - Slide index.
+   * @return {number} - Slide index.php.
    */
 
 
@@ -2913,7 +2913,7 @@ var floor = Math.floor;
 
   return Controller;
 });
-;// CONCATENATED MODULE: ./src/js/components/track/index.js
+;// CONCATENATED MODULE: ./src/js/components/track/index.php.js
 /**
  * The component for moving list in the track.
  *
@@ -2978,7 +2978,7 @@ var abs = Math.abs;
 
   var isRTL = Splide.options.direction === RTL;
   /**
-   * This will be true while transitioning from the last index to the first one.
+   * This will be true while transitioning from the last index.php to the first one.
    *
    * @type {boolean}
    */
@@ -3030,17 +3030,17 @@ var abs = Math.abs;
     },
 
     /**
-     * Go to the given destination index.
-     * After arriving there, the track is jump to the new index without animation, mainly for loop mode.
+     * Go to the given destination index.php.
+     * After arriving there, the track is jump to the new index.php without animation, mainly for loop mode.
      *
-     * @param {number}  destIndex - A destination index.
+     * @param {number}  destIndex - A destination index.php.
      *                              This can be negative or greater than slides length for reaching clones.
-     * @param {number}  newIndex  - An actual new index. They are always same in Slide and Rewind mode.
+     * @param {number}  newIndex  - An actual new index.php. They are always same in Slide and Rewind mode.
      * @param {boolean} silently  - If true, suppress emitting events.
      */
     go: function go(destIndex, newIndex, silently) {
       var newPosition = getTrimmedPosition(destIndex);
-      var prevIndex = Splide.index; // Prevent any actions while transitioning from the last index to the first one for jump.
+      var prevIndex = Splide.index; // Prevent any actions while transitioning from the last index.php to the first one for jump.
 
       if (Splide.State.is(MOVING) && isLoopPending) {
         return;
@@ -3066,9 +3066,9 @@ var abs = Math.abs;
     },
 
     /**
-     * Move the track to the specified index.
+     * Move the track to the specified index.php.
      *
-     * @param {number} index - A destination index where the track jumps.
+     * @param {number} index - A destination index.php where the track jumps.
      */
     jump: function jump(index) {
       this.translate(getTrimmedPosition(index));
@@ -3137,11 +3137,11 @@ var abs = Math.abs;
     },
 
     /**
-     * Calculate the closest slide index from the given position.
+     * Calculate the closest slide index.php from the given position.
      *
-     * @param {number} position - A position converted to an slide index.
+     * @param {number} position - A position converted to an slide index.php.
      *
-     * @return {number} - The closest slide index.
+     * @return {number} - The closest slide index.php.
      */
     toIndex: function toIndex(position) {
       var _this2 = this;
@@ -3175,9 +3175,9 @@ var abs = Math.abs;
     },
 
     /**
-     * Calculate the track position by a slide index.
+     * Calculate the track position by a slide index.php.
      *
-     * @param {number} index - Slide index.
+     * @param {number} index - Slide index.php.
      *
      * @return {Object} - Calculated position.
      */
@@ -3217,9 +3217,9 @@ var abs = Math.abs;
   /**
    * Called whenever slides arrive at a destination.
    *
-   * @param {number}  destIndex - A destination index.
-   * @param {number}  newIndex  - A new index.
-   * @param {number}  prevIndex - A previous index.
+   * @param {number}  destIndex - A destination index.php.
+   * @param {number}  newIndex  - A new index.php.
+   * @param {number}  prevIndex - A previous index.php.
    * @param {boolean} silently  - If true, suppress emitting events.
    */
 
@@ -3238,7 +3238,7 @@ var abs = Math.abs;
     }
   }
   /**
-   * Convert index to the trimmed position.
+   * Convert index.php to the trimmed position.
    *
    * @return {number} - Trimmed position.
    */
@@ -3250,7 +3250,7 @@ var abs = Math.abs;
 
   return Track;
 });
-;// CONCATENATED MODULE: ./src/js/components/clones/index.js
+;// CONCATENATED MODULE: ./src/js/components/clones/index.php.js
 /**
  * The component for cloning some slides for "loop" mode of the track.
  *
@@ -3530,11 +3530,11 @@ var abs = Math.abs;
     },
 
     /**
-     * Return total width from the left of the list to the right of the slide specified by the provided index.
+     * Return total width from the left of the list to the right of the slide specified by the provided index.php.
      *
-     * @param {number} index - Optional. A slide index. If undefined, total width of the slider will be returned.
+     * @param {number} index - Optional. A slide index.php. If undefined, total width of the slider will be returned.
      *
-     * @return {number} - Total width to the right side of the specified slide, or 0 for an invalid index.
+     * @return {number} - Total width to the right side of the specified slide, or 0 for an invalid index.php.
      */
     totalWidth: function totalWidth(index) {
       if (index === void 0) {
@@ -3563,7 +3563,7 @@ var abs = Math.abs;
     /**
      * Return the slide width in px.
      *
-     * @param {number} index - Slide index.
+     * @param {number} index - Slide index.php.
      *
      * @return {number} - The slide width.
      */
@@ -3682,11 +3682,11 @@ var abs = Math.abs;
     },
 
     /**
-     * Return total height from the top of the list to the bottom of the slide specified by the provided index.
+     * Return total height from the top of the list to the bottom of the slide specified by the provided index.php.
      *
-     * @param {number} index - Optional. A slide index. If undefined, total height of the slider will be returned.
+     * @param {number} index - Optional. A slide index.php. If undefined, total height of the slider will be returned.
      *
-     * @return {number} - Total height to the bottom of the specified slide, or 0 for an invalid index.
+     * @return {number} - Total height to the bottom of the specified slide, or 0 for an invalid index.php.
      */
     totalHeight: function totalHeight(index) {
       if (index === void 0) {
@@ -3714,7 +3714,7 @@ var abs = Math.abs;
     /**
      * Return the slide height in px.
      *
-     * @param {number} index - Slide index.
+     * @param {number} index - Slide index.php.
      *
      * @return {number} - The slide height.
      */
@@ -3842,7 +3842,7 @@ function createInterval(callback, interval, progress) {
     }
   };
 }
-;// CONCATENATED MODULE: ./src/js/components/layout/index.js
+;// CONCATENATED MODULE: ./src/js/components/layout/index.php.js
 /**
  * The component for handing slide layouts and their sizes.
  *
@@ -3965,7 +3965,7 @@ function createInterval(callback, interval, progress) {
 
   return Layout;
 });
-;// CONCATENATED MODULE: ./src/js/components/drag/index.js
+;// CONCATENATED MODULE: ./src/js/components/drag/index.php.js
 /**
  * The component for supporting mouse drag and swipe.
  *
@@ -4247,7 +4247,7 @@ var FRICTION_REDUCER = 7;
       }
       /*
        * Do not allow the track to go to a previous position if there is enough velocity.
-       * Always use the adjacent index for the fade mode.
+       * Always use the adjacent index.php for the fade mode.
        */
 
 
@@ -4309,7 +4309,7 @@ var FRICTION_REDUCER = 7;
 
   return Drag;
 });
-;// CONCATENATED MODULE: ./src/js/components/click/index.js
+;// CONCATENATED MODULE: ./src/js/components/click/index.php.js
 /**
  * The component for handling a click event.
  *
@@ -4379,7 +4379,7 @@ var FRICTION_REDUCER = 7;
 
   return Click;
 });
-;// CONCATENATED MODULE: ./src/js/components/autoplay/index.js
+;// CONCATENATED MODULE: ./src/js/components/autoplay/index.php.js
 /**
  * The component for playing slides automatically.
  *
@@ -4566,7 +4566,7 @@ var PAUSE_FLAGS = {
 
   return Autoplay;
 });
-;// CONCATENATED MODULE: ./src/js/components/cover/index.js
+;// CONCATENATED MODULE: ./src/js/components/cover/index.php.js
 /**
  * The component for change an img element to background image of its wrapper.
  *
@@ -4685,7 +4685,7 @@ var PATH = 'm15.5 0.932-4.3 4.38 14.5 14.6-14.5 14.5 4.3 4.4 14.6-14.6 4.4-4.3-4
  */
 
 var SIZE = 40;
-;// CONCATENATED MODULE: ./src/js/components/arrows/index.js
+;// CONCATENATED MODULE: ./src/js/components/arrows/index.php.js
 /**
  * The component for appending prev/next arrows.
  *
@@ -4860,7 +4860,7 @@ var SIZE = 40;
 
   return Arrows;
 });
-;// CONCATENATED MODULE: ./src/js/components/pagination/index.js
+;// CONCATENATED MODULE: ./src/js/components/pagination/index.php.js
 /**
  * The component for handling pagination
  *
@@ -4897,7 +4897,7 @@ var UPDATE_EVENT = 'updated.page refresh.page';
   /**
    * Store all data for pagination.
    * - list: A list element.
-   * - items: An array that contains objects(li, button, index, page).
+   * - items: An array that contains objects(li, button, index.php, page).
    *
    * @type {Object}
    */
@@ -4970,9 +4970,9 @@ var UPDATE_EVENT = 'updated.page refresh.page';
     },
 
     /**
-     * Return an item by index.
+     * Return an item by index.php.
      *
-     * @param {number} index - A slide index.
+     * @param {number} index - A slide index.php.
      *
      * @return {Object|undefined} - An item object on success or undefined on failure.
      */
@@ -4993,8 +4993,8 @@ var UPDATE_EVENT = 'updated.page refresh.page';
   /**
    * Update attributes.
    *
-   * @param {number} index     - Active index.
-   * @param {number} prevIndex - Prev index.
+   * @param {number} index     - Active index.php.
+   * @param {number} prevIndex - Prev index.php.
    */
 
   function updateAttributes(index, prevIndex) {
@@ -5053,7 +5053,7 @@ var UPDATE_EVENT = 'updated.page refresh.page';
 
   return Pagination;
 });
-;// CONCATENATED MODULE: ./src/js/components/lazyload/index.js
+;// CONCATENATED MODULE: ./src/js/components/lazyload/index.php.js
 /**
  * The component for loading slider images lazily.
  *
@@ -5089,7 +5089,7 @@ var SRCSET_DATA_NAME = 'data-splide-lazy-srcset';
 
 /* harmony default export */ const lazyload = (function (Splide, Components, name) {
   /**
-   * Next index for sequential loading.
+   * Next index.php for sequential loading.
    *
    * @type {number}
    */
@@ -5176,7 +5176,7 @@ var SRCSET_DATA_NAME = 'data-splide-lazy-srcset';
    * Check how close each image is from the active slide and
    * determine whether to start loading or not, according to the distance.
    *
-   * @param {number} index - Current index.
+   * @param {number} index - Current index.php.
    */
 
 
@@ -5307,13 +5307,13 @@ var ARIA_LABELLEDBY = 'aria-labelledby';
 
 var ARIA_HIDDEN = 'aria-hidden';
 /**
- * Attribute name for tab-index.
+ * Attribute name for tab-index.php.
  *
  * @type {string}
  */
 
 var TAB_INDEX = 'tabindex';
-;// CONCATENATED MODULE: ./src/js/components/keyboard/index.js
+;// CONCATENATED MODULE: ./src/js/components/keyboard/index.php.js
 /**
  * The component for controlling slides via keyboard.
  *
@@ -5400,7 +5400,7 @@ var KEY_MAP = {
     }
   };
 });
-;// CONCATENATED MODULE: ./src/js/components/a11y/index.js
+;// CONCATENATED MODULE: ./src/js/components/a11y/index.php.js
 /**
  * The component for enhancing accessibility.
  *
@@ -5519,8 +5519,8 @@ var KEY_MAP = {
    *
    * @param {Element} prev      - Previous arrow element.
    * @param {Element} next      - Next arrow element.
-   * @param {number}  prevIndex - Previous slide index or -1 when there is no precede slide.
-   * @param {number}  nextIndex - Next slide index or -1 when there is no next slide.
+   * @param {number}  prevIndex - Previous slide index.php or -1 when there is no precede slide.
+   * @param {number}  nextIndex - Next slide index.php or -1 when there is no next slide.
    */
 
 
@@ -5653,7 +5653,7 @@ var KEY_MAP = {
 
   return A11y;
 });
-;// CONCATENATED MODULE: ./src/js/components/sync/index.js
+;// CONCATENATED MODULE: ./src/js/components/sync/index.php.js
 /**
  * The component for synchronizing a slider with another.
  *
@@ -5803,10 +5803,10 @@ var TRIGGER_KEYS = [' ', 'Enter', 'Spacebar'];
     });
   }
   /**
-   * Move the sibling to the given index.
+   * Move the sibling to the given index.php.
    * Need to check "IDLE" status because slides can be moving by Drag component.
    *
-   * @param {number} index - Target index.
+   * @param {number} index - Target index.php.
    */
 
 
@@ -5818,7 +5818,7 @@ var TRIGGER_KEYS = [' ', 'Enter', 'Spacebar'];
 
   return Sync;
 });
-;// CONCATENATED MODULE: ./src/js/components/breakpoints/index.js
+;// CONCATENATED MODULE: ./src/js/components/breakpoints/index.php.js
 /**
  * The component for updating options according to a current window width.
  *
@@ -5968,7 +5968,7 @@ var THROTTLE = 50;
 
   return Breakpoints;
 });
-;// CONCATENATED MODULE: ./src/js/components/index.js
+;// CONCATENATED MODULE: ./src/js/components/index.php.js
 /**
  * Export components.
  *
