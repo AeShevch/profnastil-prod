@@ -1,3 +1,5 @@
+import {objectToFormData} from "../utils/objectToFormData";
+
 const Method = {
   GET: `GET`,
   PUT: `PUT`,
@@ -22,7 +24,7 @@ export default class Api {
     return this._load({
       url,
       method: Method.POST,
-      body: JSON.stringify(payload),
+      body: objectToFormData(payload),
       headers: headers,
     }).then(Api.toJSON);
   }

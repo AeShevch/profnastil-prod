@@ -1,14 +1,12 @@
 <?php
 require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/modules/main/include/prolog_before.php");
-var_dump(file_get_contents('php://input'));
-
 if (CModule::IncludeModule("sale") && CModule::IncludeModule("catalog")) {
-    if (isset($_POST['id']) && isset($_POST['QUANTITY'])) {
+    if (!empty($_POST['id']) && !empty($_POST['quantity'])) {
         $PRODUCT_ID = intval($_POST['id']);
-        $QUANTITY = intval($_POST['QUANTITY']);
+        $QUANTITY = intval($_POST['quantity']);
         Add2BasketByProductID($PRODUCT_ID, $QUANTITY);
 
-        echo "Ok";
+        echo json_encode(["STATUS" => 'Ok']);
     } else {
         echo "Нет параметров";
     }

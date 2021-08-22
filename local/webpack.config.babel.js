@@ -82,10 +82,15 @@ Encore.setOutputPath(PATH_TO_ROOT)
     template: "products-carousel",
   })
 
-  // Миникарточка товара
+  // Миникарточка товара 1
   .BXComponentStyle("bitrix:catalog.item", {
     siteTemplate: ".default",
     template: "mini-product",
+  })
+  // Миникарточка товара 2
+  .BXComponentStyle("bitrix:catalog.item", {
+    siteTemplate: ".default",
+    template: ".default",
   })
 
   // Фильтр в каталоге

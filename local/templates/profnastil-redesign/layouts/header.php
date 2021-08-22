@@ -4,7 +4,6 @@
 /** @global $USER */
 
 use Bitrix\Main\Loader;
-
 Loader::includeModule("sale");
 $delaydBasketItems = CSaleBasket::GetList(
 	array(),
@@ -150,7 +149,7 @@ $delaydBasketItems = CSaleBasket::GetList(
 								</a>
 								<button class="header-phone__back-ring"
 										type="button">
-									Заказать звонок
+									Позвонить
 								</button>
 							</div>
 						</div>

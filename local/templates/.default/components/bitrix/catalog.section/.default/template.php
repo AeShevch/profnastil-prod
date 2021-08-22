@@ -2,11 +2,11 @@
 $this->setFrameMode(true);
 ?>
 <script>
-    // window.filterCount = '//declOfNum($arResult['NAV_RESULT']->NavRecordCount, array('товар', 'товара', 'товаров'));';
-    // document.addEventListener('DOMContentLoaded', () => {
-    // 	let countContainer = document.querySelector('.mobile-filter-toggle__products-count');
-    // 	countContainer.innerHTML = window.filterCount;
-    // })
+    //window.filterCount = "<?//=declOfNum($arResult['NAV_RESULT']->NavRecordCount, array('товар', 'товара', 'товаров'));?>//";
+    //document.addEventListener('DOMContentLoaded', () => {
+    //	let countContainer = document.querySelector('.mobile-filter-toggle__products-count');
+    //	countContainer.innerHTML = window.filterCount;
+    //})
 </script>
 
 <script>
@@ -87,7 +87,7 @@ $this->setFrameMode(true);
 <!--         class="compare-alert section section_padding"-->
 <!--         id="compare_list_count"-->
 <!--         aria-label="Товар добавлен в сравнение">-->
-<!--    --><?// $APPLICATION->IncludeComponent(
+<!--    --><? // $APPLICATION->IncludeComponent(
 //        "bitrix:catalog.compare.list",
 //        "",
 //        array(
@@ -155,193 +155,14 @@ $this->setFrameMode(true);
 
                 <!-- Catalog item  -->
                 <li class="col-6 col-lg-3 p-0" id="<?= $this->GetEditAreaId($arElement['ID']); ?>">
-                    <article class="catalog-item h-100 d-flex flex-column js-product-container">
-                        <span class="catalog-item__article mb-2">
-                            Код: <?php echo $arElement["PROPERTIES"]["CML2_TRAITS"]["VALUE"][2] ?>
-                        </span>
-                        <!-- Product sales -->
-                        <div class="catalog-item__labels product-labels">
-                            <div class="product-labels__main">
-                                <? foreach ($arElement["PRICES"] as $code => $arPrice): ?>
-                                    <? if ($arPrice["CAN_ACCESS"]): ?>
-                                        <? if ($arPrice["DISCOUNT_DIFF_PERCENT"]): ?>
-                                            <mark class="product-labels__item">
-                                                Скидка <?= $arPrice["DISCOUNT_DIFF_PERCENT"] ?>%
-                                            </mark>
-                                        <? endif; ?>
-                                    <? endif; ?>
-                                <? endforeach; ?>
-                            </div>
-                        </div>
-
-                        <!-- Product add buttons -->
-                        <!--                        <div class="catalog-item__control-buttons">-->
-                        <!--                            --><? //
-                        //                            //Проверяем, есть ли данный товар в отложенных
-                        //                            $curProductId = $arElement["ID"];
-                        //                            $dbBasketItems = CSaleBasket::GetList(
-                        //                                array(
-                        //                                    "NAME" => "ASC",
-                        //                                    "ID" => "ASC"
-                        //                                ),
-                        //                                array(
-                        //                                    "FUSER_ID" => CSaleBasket::GetBasketUserID(),
-                        //                                    "LID" => SITE_ID,
-                        //                                    "PRODUCT_ID" => $curProductId,
-                        //                                    "ORDER_ID" => "NULL",
-                        //                                    "DELAY" => "Y"
-                        //                                ),
-                        //                                false,
-                        //                                false,
-                        //                                array("PRODUCT_ID")
-                        //                            );
-                        //                            while ($arItems = $dbBasketItems->Fetch()) {
-                        //                                $itInDelay = $arItems['PRODUCT_ID'];
-                        //                            }
-                        //                            ?>
-                        <!--                            <button class="product-control wishbtn  -->
-                        <? // if ((in_array($arResult["ID"], $delaydBasketItems)) || (isset($itInDelay))) {
-                        //                                echo 'in_wishlist';
-                        //                            } ?><!--"-->
-                        <!--                                    aria-label="Добавить товар в избранное"-->
-                        <!--                                    title="Добавить товар в избранное"-->
-                        <!--                                    type="button"-->
-                        <!--                                    onclick="add2wish(-->
-                        <!--                                            '--><? //= $arElement["ID"] ?><!--',-->
-                        <!--                                            '-->
-                        <? //= $arElement["CATALOG_PRICE_ID_7"] ?><!--',-->
-                        <!--                                            '-->
-                        <? //= $arElement["CATALOG_PRICE_7"] ?><!--',-->
-                        <!--                                            '--><? //= $arElement["NAME"] ?><!--',-->
-                        <!--                                            '-->
-                        <? //= $arElement["DETAIL_PAGE_URL"] ?><!--',-->
-                        <!--                                            this)">-->
-                        <!--                                <svg aria-hidden="true" width="20" height="20">-->
-                        <!--                                    <use xlink:href="#icon_like"></use>-->
-                        <!--                                </svg>-->
-                        <!--                            </button>-->
-                        <!--                            --><? // unset($itInDelay) ?>
-                        <!--                            <button class="product-control --><? //= $checked; ?><!--"-->
-                        <!--                                    id="compareid_--><? //= $arElement['ID']; ?><!--"-->
-                        <!--                                    onclick="compare_tov(-->
-                        <? //= $arElement['ID']; ?><!--);"-->
-                        <!--                                    aria-label="Добавить товар в сравнение"-->
-                        <!--                                    title="Добавить товар в сравнение"-->
-                        <!--                                    type="button">-->
-                        <!--                                <svg aria-hidden="true" width="20" height="20">-->
-                        <!--                                    <use xlink:href="#icon_compare"></use>-->
-                        <!--                                </svg>-->
-                        <!--                            </button>-->
-                        <!--                        </div>-->
-
-                        <!-- Product image -->
-                        <a href="<?= $arElement["DETAIL_PAGE_URL"] ?>"
-                           id="<?= $arItemIDs['PICT'] ?>"
-                           title="Перейти к товару «<?= $arElement["NAME"] ?>»"
-                           class="catalog-item__image">
-                            <img src="<?php echo !empty($arElement["PREVIEW_PICTURE"]["SRC"]) ? $arElement["PREVIEW_PICTURE"]["SRC"] : SITE_TEMPLATE_PATH . "/images/product-placeholder.jpeg" ?>"
-                                <?php // aria-labelledby должен совпадать с id заголовка, id можно любой ?>
-                                 class="js-product-image"
-                                 aria-labelledby="catalog-item-title-<?= $this->GetEditAreaId($arElement['ID']); ?>"
-                                 alt="<?= $arElement["NAME"] ?>"
-                                 loading="lazy"
-                                 width="206" height="160">
-                        </a>
-
-                        <!-- Product name -->
-
-                        <a href="<?= $arElement["DETAIL_PAGE_URL"] ?>"
-                           class="catalog-item__link mb-2 mt-3"
-                           title="Перейти к товару «<?= $arElement["NAME"] ?>">
-                            <h3 class="catalog-item__title"
-                                id="catalog-item-title-<?= $this->GetEditAreaId($arElement['ID']); ?>">
-                                <?= $arElement['NAME'] ?>
-                            </h3>
-                        </a>
-
-                        <!-- Product prices -->
-                        <div class="catalog-item__prices mb-3 mt-auto">
-                            <? foreach ($arElement["PRICES"] as $code => $arPrice): ?>
-                                <? if ($arPrice["CAN_ACCESS"]): ?>
-                                    <? if ($arPrice["DISCOUNT_VALUE"] < $arPrice["VALUE"]): ?>
-                                        <span class="catalog-item__price-old"><?= $arPrice["VALUE"] ?>&nbsp₽</span>
-                                        <span class="catalog-item__price-main bx_price"
-                                              id="<?= $arItemIDs['PRICE'] ?>">
-											<span><?= $arPrice["DISCOUNT_VALUE"] ?>₽</span></span>
-                                    <? else: ?>
-                                        <span class="catalog-item__price-main bx_price"
-                                              id="<?= $arItemIDs['PRICE'] ?>"> <span><?= $arPrice["VALUE"] ?>&nbsp₽</span></span>
-                                    <? endif; ?>
-                                <? endif; ?>
-                            <? endforeach; ?>
-                        </div>
-                        <span id="<? echo $arItemIDs['QUANTITY_MEASURE']; ?>">
-                                            <?
-                                            if (empty($arItem["PROPERTIES"]["CML2_BASE_UNIT"]["VALUE"])) {
-                                                echo $arItem['CATALOG_MEASURE_NAME'];
-
-                                            } else {
-                                                echo $arItem["PROPERTIES"]["CML2_BASE_UNIT"]["VALUE"];
-                                            }
-                                            ?>
-                                        </span>
-
-                        <!-- Buy button -->
-                        <? if ($arElement["CAN_BUY"]): ?>
-                            <div class="d-flex justify-content-center mb-2">
-                                <fieldset class="count-field">
-                                    <div class="count-field__inner">
-                                        <button aria-controls="product-count-input"
-                                                aria-label="Уменьшить количество товара на 1"
-                                                onClick="this.parentElement.children['product-count-input'].stepDown()"
-                                                class="count-field__button count-field__button_minus"
-                                                type="button">
-                                            –
-                                        </button>
-                                        <input id="product-count-input"
-                                               aria-label="Количество товара"
-                                               autocomplete="off"
-                                               class="count-field__input js-product-quantity"
-                                               max="<?php // echo $arResult["PRODUCT"]["QUANTITY"] ?>"
-                                               min="1"
-                                               name="product-count-input"
-                                               step="1"
-                                               pattern="\d+"
-                                               type="number"
-                                               value="1">
-                                        <button aria-controls="product-count-input"
-                                                aria-label="Увеличить количество товара на 1"
-                                                onClick="this.parentElement.children['product-count-input'].stepUp()"
-                                                class="count-field__button count-field__button_plus"
-                                                type="button">
-                                            +
-                                        </button>
-                                    </div>
-                                </fieldset>
-                            </div>
-                            <button class="catalog-item__add-to-cart button w-100 js-add-to-cart-button"
-                                    id="<? echo $arItemIDs['BUY_LINK']; ?>"
-                                    data-ajax-url="<?= $arElement["ADD_URL"] ?>"
-                                    data-id="<?= $arElement["ID"] ?>"
-                                    data-price="<?php echo $arElement["PRICES"]["Типовые правила продаж"]["VALUE"] ?>"
-                                    type="submit"
-                                    name="<? echo $arParams["ACTION_VARIABLE"] . "ADD2BASKET" ?>"
-                                    aria-label="Добавить в корзину">
-                                <svg class="me-1" width="16" height="16">
-                                    <use xlink:href="#icon_cart-thin"></use>
-                                </svg>
-                                Купить
-                                <span id="html-spinner"></span>
-                            </button>
-                        <? elseif ((count($arResult["PRICES"]) > 0) || is_array($arElement["PRICE_MATRIX"])): ?>
-                            <button class="catalog-item__add-to-cart button w-100"
-                                    type="button"
-                                    aria-label="<?= GetMessage("CATALOG_NOT_AVAILABLE") ?>">
-                                <?= GetMessage("CATALOG_NOT_AVAILABLE") ?>
-                            </button>
-                        <? endif ?>
-
-                    </article>
+                    <? $APPLICATION->IncludeComponent(
+                        "bitrix:catalog.item",
+                        "",
+                        [
+                            "IBLOCK_ID" => "113",
+                            "ITEM" => $arElement
+                        ]
+                    ); ?>
                 </li>
             <? endforeach; ?>
         </ul>

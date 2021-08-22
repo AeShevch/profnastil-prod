@@ -16,10 +16,11 @@ export const addToCart = (evt, cartPriceElement) => {
   const quantity = quantityInput ? quantityInput.value : 1;
 
   // Sending data to server
-  fetchAddToCart(id, quantity).then(res => {
-    if (res.STATUS === `OK`) {
+  fetchAddToCart(id, quantity).then((res) => {
+    console.log(res);
+    if (res.STATUS === `Ok`) {
       // Updating mini cart
-      BX.onCustomEvent('OnBasketChange');
+      BX.onCustomEvent("OnBasketChange");
       moveImageToCart(productContainer, cartPriceElement);
     }
 

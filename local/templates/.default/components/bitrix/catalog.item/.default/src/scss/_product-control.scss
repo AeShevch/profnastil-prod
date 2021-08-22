@@ -3,6 +3,10 @@
 .product-control {
   transition: transform var(--transition-time) var(--transition-timing-function);
 
+  &[aria-pressed="true"] svg {
+    fill: var(--main);
+  }
+
   & + & {
     margin-top: .5em;
   }
@@ -19,5 +23,6 @@
   svg {
     transition: fill var(--transition-time);
     fill: var(--medium-gray);
+    pointer-events: none;
   }
 }
