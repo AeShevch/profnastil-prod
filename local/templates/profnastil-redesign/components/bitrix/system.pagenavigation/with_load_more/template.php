@@ -31,29 +31,25 @@ else
 }
 ?>
 <section class="section mb-3 position-relative">
-<!--    <button aria-label="Показать больше товаров"-->
-<!--            class="catalog__show-more link w-100"-->
-<!--            type="button">-->
-<!--        --><?//if ($arResult["NavPageNomer"]+1 <= $arResult["nEndPage"]):?>
-<!--            --><?//
-//            $plus = $arResult["NavPageNomer"]+1;
-//            $url = $arResult["sUrlPathParams"] . "PAGEN_".$arResult["NavNum"]."=".$plus;
-//
-//            ?>
-<!---->
-<!--            <span class="load_more" data-url="--><?//=$url?><!--">-->
-<!--                Показать еще-->
-<!--            </span>-->
-<!---->
-<!--        --><?//else:?>
-<!---->
-<!--            <div class="load_more">-->
-<!--                Загружено все-->
-<!--            </div>-->
-<!---->
-<!--        --><?//endif?>
-<!---->
-<!--    </button>-->
+
+    <button aria-label="Показать больше товаров"
+            class="catalog__show-more link w-100"
+            type="button">
+        <?if ($arResult["NavPageNomer"]+1 <= $arResult["nEndPage"]):?>
+            <?
+            $plus = $arResult["NavPageNomer"]+1;
+            $url = $arResult["sUrlPathParams"] . "PAGEN_".$arResult["NavNum"]."=".$plus;
+            ?>
+            <span class="load_more" data-url="<?=$url?>">
+                Показать ещё
+            </span>
+        <?else:?>
+            <div class="load_more">
+                Загружено всё
+            </div>
+        <?endif?>
+    </button>
+
 	<nav class="catalog__pagination pagination" aria-label="Pagination">
 		<ul class="list-reset">
 <?if($arResult["bDescPageNumbering"] === true):?>
