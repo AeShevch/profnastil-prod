@@ -49,5 +49,7 @@ $APPLICATION->IncludeFile(SITE_TEMPLATE_PATH . "/layouts/header.php"); ?>
 <?php
 // Header mobile
 $APPLICATION->IncludeFile(SITE_TEMPLATE_PATH . "/layouts/header-mobile.php"); ?>
-
+<?
+//Прайсы
+$APPLICATION->IncludeFile('components/customs/priceDownload/index.php');?>
 <main>

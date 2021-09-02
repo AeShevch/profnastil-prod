@@ -41,7 +41,7 @@ document.addEventListener(`DOMContentLoaded`, () => {
         `.js-toggle-in-wishlist`
       );
 
-      if (addToWishButtonElement.ariaPressed === `true`) {
+      if (addToWishButtonElement && addToWishButtonElement.ariaPressed === `true`) {
         callWishlistAction(addToWishButtonElement).then(() =>
           addToCart(evt, cartPriceElement)
         );

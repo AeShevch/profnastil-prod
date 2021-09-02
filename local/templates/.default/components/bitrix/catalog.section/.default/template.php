@@ -1,3 +1,4 @@
+<? /** @var CBitrixComponent $component */ ?>
 <? if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
 $this->setFrameMode(true);
 ?>
@@ -50,61 +51,28 @@ $this->setFrameMode(true);
     }
 </script>
 
-<script>
-    function add2wish(p_id, pp_id, p, name, dpu, element) {
-        let action = 'add';
-        if ($(element).hasClass('in_wishlist')) {
-            action = 'remove';
-        }
-        $.ajax({
-            type: "POST",
-            url: "/local/ajax/wishlist.php",
-            data: "p_id=" + p_id + "&pp_id=" + pp_id + "&p=" + p + "&name=" + name + "&dpu=" + dpu + '&action=' + action,
-            success: function (html) {
-                if (action == 'add') {
-                    $(element).addClass('in_wishlist');
-                } else {
-                    $(element).removeClass('in_wishlist');
-                }
-                $('#wishcount').html(html);
-                $('.header-link-count-wishlist').text(html);
-            }
-        });
-    };
-</script>
-
-<style>
-    .in_wishlist svg {
-        fill: var(--main);
-    }
-
-    .in_compare svg {
-        fill: var(--main);
-    }
-</style>
-
-<!--<section role="alert"-->
-<!--         class="compare-alert section section_padding"-->
-<!--         id="compare_list_count"-->
-<!--         aria-label="Товар добавлен в сравнение">-->
-<!--    --><? // $APPLICATION->IncludeComponent(
-//        "bitrix:catalog.compare.list",
-//        "",
-//        array(
-//            "IBLOCK_TYPE" => "catalog1Cv83", //Сюда ваш тип инфоблока каталога
-//            "IBLOCK_ID" => "113", //Сюда ваш ID инфоблока каталога
-//            "AJAX_MODE" => "N",
-//            "AJAX_OPTION_JUMP" => "N",
-//            "AJAX_OPTION_STYLE" => "Y",
-//            "AJAX_OPTION_HISTORY" => "N",
-//            "DETAIL_URL" => "#SECTION_CODE#",
-//            "COMPARE_URL" => "/catalog/compare.php",
-//            "NAME" => "CATALOG_COMPARE_LIST",
-//            "AJAX_OPTION_ADDITIONAL" => ""
-//        ),
-//        $component
-//    ); ?>
-<!--</section>-->
+<section role="alert"
+         class="compare-alert section section_padding"
+         id="compare_list_count"
+         aria-label="Товар добавлен в сравнение">
+    <? $APPLICATION->IncludeComponent(
+        "bitrix:catalog.compare.list",
+        "",
+        array(
+            "IBLOCK_TYPE" => "catalog1Cv83", //Сюда ваш тип инфоблока каталога
+            "IBLOCK_ID" => "113", //Сюда ваш ID инфоблока каталога
+            "AJAX_MODE" => "N",
+            "AJAX_OPTION_JUMP" => "N",
+            "AJAX_OPTION_STYLE" => "Y",
+            "AJAX_OPTION_HISTORY" => "N",
+            "DETAIL_URL" => "#SECTION_CODE#",
+            "COMPARE_URL" => "/catalog/compare.php",
+            "NAME" => "CATALOG_COMPARE_LIST",
+            "AJAX_OPTION_ADDITIONAL" => ""
+        ),
+        $component
+    ); ?>
+</section>
 
 
 <? if ($arParams["DISPLAY_TOP_PAGER"]): ?>
@@ -157,11 +125,12 @@ $this->setFrameMode(true);
                 <li class="col-6 col-lg-3 p-0" id="<?= $this->GetEditAreaId($arElement['ID']); ?>">
                     <? $APPLICATION->IncludeComponent(
                         "bitrix:catalog.item",
-                        "",
+                        ".default",
                         [
                             "IBLOCK_ID" => "113",
-                            "ITEM" => $arElement
-                        ]
+                            "ITEM" => $arElement,
+                        ],
+                        $component
                     ); ?>
                 </li>
             <? endforeach; ?>

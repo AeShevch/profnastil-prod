@@ -15,8 +15,8 @@ $delaydBasketItems = CSaleBasket::GetList(
 	),
 	array()
 );
-//use Bitrix\Main\UI\Extension;
-//Extension::load('ui.bootstrap4');
+use Bitrix\Main\UI\Extension;
+Extension::load('ui.bootstrap4');
 ?>
 
 <header class="header js-header-element d-none d-lg-block" id="header">
@@ -50,7 +50,7 @@ $delaydBasketItems = CSaleBasket::GetList(
 				</div>
 				<div class="col-4">
 					<div class="d-flex justify-content-end">
-                            <button type="button" class="me-2 ps-3 pe-3 header__button button button_secondary btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+                            <button type="button" class="me-2 ps-3 pe-3 header__button button button_secondary btn btn-primary" data-toggle="modal" data-target="#exampleModal">
                                 <svg class="" width="21" height="21">
                                     <use xlink:href="#iconDownload"></use>
                                 </svg>

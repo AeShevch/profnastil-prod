@@ -139,7 +139,7 @@ if (isset($_SESSION["CATALOG_COMPARE_LIST"][$iblockid]["ITEMS"][$id])) {
        title="Перейти к товару «<?= $arElement["NAME"] ?>">
         <h3 class="catalog-item__title"
             id="catalog-item-title-<?= $this->GetEditAreaId($arElement['ID']); ?>">
-            <?= $arElement['NAME'] ?>
+            <?= htmlspecialchars_decode($arElement['NAME']) ?>
         </h3>
     </a>
 
@@ -147,34 +147,32 @@ if (isset($_SESSION["CATALOG_COMPARE_LIST"][$iblockid]["ITEMS"][$id])) {
     <div class="catalog-item__prices mb-3 mt-auto">
         <?
         if (!empty($arElement["PRICES"])) :
-        foreach ($arElement["PRICES"] as $code => $arPrice): ?>
-            <? if ($arPrice["CAN_ACCESS"]): ?>
-                <? if ($arPrice["DISCOUNT_VALUE"] < $arPrice["VALUE"]): ?>
-                    <span class="catalog-item__price-old"><?= $arPrice["VALUE"] ?>&nbsp₽</span>
-                    <span class="catalog-item__price-main bx_price"
-                          id="<?= $arItemIDs['PRICE'] ?>">
+            foreach ($arElement["PRICES"] as $code => $arPrice): ?>
+                <? if ($arPrice["CAN_ACCESS"]): ?>
+                    <? if ($arPrice["DISCOUNT_VALUE"] < $arPrice["VALUE"]): ?>
+                        <span class="catalog-item__price-old"><?= $arPrice["VALUE"] ?>&nbsp₽</span>
+                        <span class="catalog-item__price-main bx_price"
+                              id="<?= $arItemIDs['PRICE'] ?>">
 											<span><?= $arPrice["DISCOUNT_VALUE"] ?>₽</span></span>
-                <? else: ?>
-                    <span class="catalog-item__price-main bx_price"
-                          id="<?= $arItemIDs['PRICE'] ?>"> <span><?= $arPrice["VALUE"] ?>&nbsp₽</span></span>
+                    <? else: ?>
+                        <span class="catalog-item__price-main bx_price"
+                              id="<?= $arItemIDs['PRICE'] ?>"> <span><?= $arPrice["VALUE"] ?>&nbsp₽</span></span>
+                    <? endif; ?>
                 <? endif; ?>
-            <? endif; ?>
-        <? endforeach; ?>
-        <? elseif($arElement["PRICE"]): ?>
+            <? endforeach; ?>
+        <? elseif ($arElement["PRICE"]): ?>
             <span class="catalog-item__price-main bx_price"
                   id="<?= $arItemIDs['PRICE'] ?>"> <span><?= $arElement["PRICE"] ?>&nbsp₽</span></span>
+        <? elseif ($arElement['ITEM_PRICES']): ?>
+            <? if ($arElement['ITEM_PRICES'][0]['PRINT_RATIO_PRICE'] != $arElement['ITEM_PRICES'][0]['PRINT_RATIO_BASE_PRICE']): ?>
+                <span class="catalog-item__price-old"><?= $arElement['ITEM_PRICES'][0]['PRINT_RATIO_BASE_PRICE'] ?></span>
+                <span class="catalog-item__price-main"><?= $arElement['ITEM_PRICES'][0]['PRINT_RATIO_PRICE'] ?></span>
+            <? else: ?>
+                <span class="catalog-item__price-main"><?= $arElement['ITEM_PRICES'][0]['PRINT_RATIO_PRICE'] ?></span>
+            <? endif; ?>
         <? endif; ?>
-    </div>
-    <span id="<? echo $arItemIDs['QUANTITY_MEASURE']; ?>">
-        <?
-        if (empty($arItem["PROPERTIES"]["CML2_BASE_UNIT"]["VALUE"])) {
-            echo $arItem['CATALOG_MEASURE_NAME'];
 
-        } else {
-            echo $arItem["PROPERTIES"]["CML2_BASE_UNIT"]["VALUE"];
-        }
-        ?>
-    </span>
+    </div>
 
     <!-- Buy button -->
     <? if ($arElement["CAN_BUY"]): ?>

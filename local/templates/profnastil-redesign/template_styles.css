@@ -85,9 +85,66 @@
     to {transform: rotate(360deg);}
 }
 /*главная*/
+.cstm-modal-body{
+    background: #f5f5f5;
+}
+.cst-modal-title{
+    padding: 22.4px 0;
+}
+.modal-title-bg{
+    max-width: 350px;
+}
+.price__wrap{
+    background:white;
+    padding:15px;
+    border:2px solid #eceff1;
+    border-radius:5px;
+    transition: .3s;
+}
+.price__wrap:hover {
+    background:white;
+    cursor:pointer;
+    transition: .3s;
+}
+.price__wrap:hover .price_link {
+    color:#e90008;
+    cursor:pointer;
+    transition: .3s;
+}
 .price-download:hover .price-download__popup{
     display:block !important;
     position:absolute;
+}
+.price__file{
+    font-size:1.15em;
+    text-decoration:none;
+    color:black;
+    font-weight:700;
+}
+.price__file:hover {
+    text-decoration:none;
+    color:black;
+    font-weight:700;
+}
+.price__file span{
+    font-size:12px;
+    font-weight: 400;
+    color:#707070;
+}
+.cstm-btn{
+    background:#eceff1;
+    color:black;
+    font-weight:600;
+    border:2px solid #f5f5f5;
+    border-radius:5px;
+    padding:10px 0px;
+    width:180px;
+}
+.cstm-btn:hover {
+    background:whitesmoke;
+    color:black;
+    font-weight:600;
+    border:2px solid #f5f5f5;
 }
 .trigger_big{
     padding: 4.30em 1.5em;

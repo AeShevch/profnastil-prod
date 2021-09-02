@@ -84,11 +84,10 @@ $tabItems = array_reduce($arResult["ITEMS"], function ($carry, $item) {
                         <?php
                         $APPLICATION->IncludeComponent(
                             'bitrix:catalog.item',
-                            'mini-product',
+                            '.default',
                             [
-                                'RESULT' => [
-                                    'ITEM' => $item,
-                                ],
+                                "IBLOCK_ID" => "113",
+                                'ITEM' => $item,
                             ],
                             $component
                         );

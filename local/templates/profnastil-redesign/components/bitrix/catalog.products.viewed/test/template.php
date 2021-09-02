@@ -170,52 +170,15 @@ if (!empty($arResult['ITEMS'])) {
                         ?>
                         <li class="col-6 col-lg p-0"
                             id="<? echo $strMainID; ?>">
-                            <article class="catalog-item h-100">
-
-                                <!--                            <div class="catalog-item__labels product-labels">-->
-                                <!--                                <div class="product-labels__main">-->
-                                <!--                                    <mark class="product-labels__item">-->
-                                <!--                                        Скидка 10%-->
-                                <!--                                    </mark>-->
-                                <!--                                </div>-->
-                                <!--                            </div>-->
-
-                                <!--                            --><?//echo '<pre>'; print_r($arItem); echo '</pre>';?>
-                                <a id="<? echo $arItemIDs['PICT']; ?>" href="<? echo $arItem['DETAIL_PAGE_URL']; ?>"
-                                   title="<?= $arItem['NAME'] ?>" class="catalog-item__image">
-                                    <img src="<?php echo !empty($arItem["PREVIEW_PICTURE"]["SRC"]) ? $arItem["PREVIEW_PICTURE"]["SRC"] : SITE_TEMPLATE_PATH . "/images/product-placeholder.jpeg" ?>"
-                                         aria-labelledby="catalog-item-title-0" alt="<?= $arItem['NAME'] ?>"
-                                         loading="lazy" width="206" height="160">
-                                </a>
-
-
-                                <a href="<?= $arItem['DETAIL_PAGE_URL'] ?>" class="catalog-item__link mb-3"
-                                   title="<?= $arItem['NAME'] ?>">
-                                    <h3 class="catalog-item__title"
-                                        id="catalog-item-title-0"><?= $arItem['NAME'] ?></h3>
-                                </a>
-
-
-                                <div class="catalog-item__prices mb-3 mt-auto">
-                                    <? if ($arItem['ITEM_PRICES'][0]['PRINT_RATIO_PRICE'] != $arItem['ITEM_PRICES'][0]['PRINT_RATIO_BASE_PRICE']): ?>
-                                        <span class="catalog-item__price-old"><?= $arItem['ITEM_PRICES'][0]['PRINT_RATIO_BASE_PRICE'] ?></span>
-                                        <span class="catalog-item__price-main"><?= $arItem['ITEM_PRICES'][0]['PRINT_RATIO_PRICE'] ?></span>
-                                    <? else: ?>
-                                        <span class="catalog-item__price-main"><?= $arItem['ITEM_PRICES'][0]['PRINT_RATIO_PRICE'] ?></span>
-
-                                    <?endif; ?>
-                                </div>
-                                <button class="catalog-item__add-to-cart button w-100"
-                                        id="<? echo $arItemIDs['BUY_LINK']; ?>"
-                                        type="submit"
-                                        name="<? echo $arParams["ACTION_VARIABLE"] . "ADD2BASKET" ?>"
-                                        aria-label="Добавить в корзину">
-                                    <svg class="me-1" width="16" height="16">
-                                        <use xlink:href="#icon_cart-thin"></use>
-                                    </svg>
-                                    Купить
-                                </button>
-                            </article>
+                            <? $APPLICATION->IncludeComponent(
+                                "bitrix:catalog.item",
+                                ".default",
+                                [
+                                    "IBLOCK_ID" => "113",
+                                    "ITEM" => $arItem,
+                                ],
+                                $component
+                            ); ?>
                         </li>
                         <?
                     }

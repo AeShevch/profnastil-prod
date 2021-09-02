@@ -17,7 +17,6 @@ export const addToCart = (evt, cartPriceElement) => {
 
   // Sending data to server
   fetchAddToCart(id, quantity).then((res) => {
-    console.log(res);
     if (res.STATUS === `Ok`) {
       // Updating mini cart
       BX.onCustomEvent("OnBasketChange");
