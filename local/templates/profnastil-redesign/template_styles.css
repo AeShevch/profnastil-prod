@@ -166,3 +166,9 @@
     fill: #ffda33;
     transition: .15s;
 }
+.dropdown-menu{
+    min-width: 31.2rem !important;
+}
+.m-search-collapse{
+    min-width: 31.2rem !important;
+}
