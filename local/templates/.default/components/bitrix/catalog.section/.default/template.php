@@ -10,47 +10,6 @@ $this->setFrameMode(true);
     //})
 </script>
 
-<script>
-    function compare_tov(id) {
-        var chek = document.getElementById('compareid_' + id);
-        if (!chek.classList.contains('in_compare')) {
-            chek.classList.add('in_compare');
-            //Добавить
-            var AddedGoodId = id;
-            $.get("/local/ajax/list_compare.php",
-                {
-                    action: "ADD_TO_COMPARE_LIST", id: AddedGoodId, 'compare_list_reload': 'Y'
-                },
-                function (data) {
-                    $("#compare_list_count").html(data);
-                    let count = $('#compare_list_count').find('[data-block="count"]').text();
-                    if (count.length > 0)
-                        $('.header-link-count-compare').text(count)
-                    else
-                        $('.header-link-count-compare').text('0');
-                }
-            );
-        } else {
-            chek.classList.remove('in_compare');
-            //Удалить
-            var AddedGoodId = id;
-            $.get("/local/ajax/list_compare.php",
-                {
-                    action: "DELETE_FROM_COMPARE_LIST", id: AddedGoodId, 'compare_list_reload': 'Y'
-                },
-                function (data) {
-                    $("#compare_list_count").html(data);
-                    let count = $('#compare_list_count').find('[data-block="count"]').text();
-                    if (count.length > 0)
-                        $('.header-link-count-compare').text(count)
-                    else
-                        $('.header-link-count-compare').text('0');
-                }
-            );
-        }
-    }
-</script>
-
 <section role="alert"
          class="compare-alert section section_padding"
          id="compare_list_count"
@@ -112,13 +71,7 @@ $this->setFrameMode(true);
 
                 );
                 $strObName = 'ob' . preg_replace("/[^a-zA-Z0-9_]/i", "x", $strMainID);
-                $iblockid = $arElement['IBLOCK_ID'];
-                $id = $arElement['ID'];
-                if (isset($_SESSION["CATALOG_COMPARE_LIST"][$iblockid]["ITEMS"][$id])) {
-                    $checked = 'in_compare';
-                } else {
-                    $checked = '';
-                }
+
                 ?>
 
                 <!-- Catalog item  -->

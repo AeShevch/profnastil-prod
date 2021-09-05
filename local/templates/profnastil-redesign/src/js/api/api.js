@@ -1,4 +1,4 @@
-import {objectToFormData} from "../utils/objectToFormData";
+import { objectToFormData } from "../utils/objectToFormData";
 
 const Method = {
   GET: `GET`,
@@ -29,9 +29,9 @@ export default class Api {
     }).then(Api.toJSON);
   }
 
-  get(url) {
+  get(url, params = {}) {
     return this._load({
-      url,
+      url: `${url}?${new URLSearchParams(params)}`,
     }).then(Api.toJSON);
   }
 

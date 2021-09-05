@@ -6,7 +6,11 @@
     flex-direction: column;
   }
 
-  &__pagination__page.is-active {
-    background: var(--main);
+  &__pagination {
+    bottom: -2.5em;
+
+    &__page.is-active {
+      background: var(--main);
+    }
   }
 }

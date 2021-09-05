@@ -15,8 +15,8 @@ $delaydBasketItems = CSaleBasket::GetList(
 	),
 	array()
 );
-use Bitrix\Main\UI\Extension;
-Extension::load('ui.bootstrap4');
+//use Bitrix\Main\UI\Extension;
+//Extension::load('ui.bootstrap4');
 ?>
 
 <header class="header js-header-element d-none d-lg-block" id="header">
@@ -59,18 +59,7 @@ Extension::load('ui.bootstrap4');
                         <? if (CUser::IsAuthorized()): ?>
                             <a href="<?=$APPLICATION->GetCurPage() ?>?logout=yes" class="ps-3 pe-3 header__button button button_secondary"><?= CUser::GetFullName(); ?></a>
                         <?else:?>
-                            <button type="button" class="me-2 ps-3 pe-3 header__button button button_secondary btn btn-primary" data-toggle="modal" data-target="#personalModal">
-                                <svg class="" width="21" height="21">
-                                    <use xlink:href="#iconEnter_lc"></use>
-                                </svg>
-                                Войти
-                            </button>
-                            <a href="/personal/orders/" class="ps-3 pe-3 header__button button button_secondary">
-                                <svg class="" width="21" height="21">
-                                    <use xlink:href="#iconEnter_lc"></use>
-                                </svg>
-                                Войти
-                            </a>
+                            <?$APPLICATION->IncludeFile('components/customs/personalAccount/index.php');?>
                         <?endif;?>
 					</div>
 				</div>

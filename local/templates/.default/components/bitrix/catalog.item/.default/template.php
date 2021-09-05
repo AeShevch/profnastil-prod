@@ -107,9 +107,15 @@ if (isset($_SESSION["CATALOG_COMPARE_LIST"][$iblockid]["ITEMS"][$id])) {
             </svg>
         </button>
         <? unset($itInDelay) ?>
-        <button class="product-control <?= $checked; ?>"
+
+        <?php
+        $isInCompareList = isset($_SESSION["CATALOG_COMPARE_LIST"][$arElement['IBLOCK_ID']]["ITEMS"][$arElement['ID']]);
+        ?>
+        <button class="product-control js-toggle-compare"
                 id="compareid_<?= $arElement['ID']; ?>"
-                onclick="compare_tov(<?= $arElement['ID']; ?>);"
+                aria-pressed="<?= $isInCompareList ? 'true' : 'false' ?>"
+                data-action="<?= $isInCompareList ? 'DELETE_FROM_COMPARE_LIST' : 'ADD_TO_COMPARE_LIST' ?>"
+                data-product-id="<?= $arElement["ID"] ?>"
                 aria-label="Добавить товар в сравнение"
                 title="Добавить товар в сравнение"
                 type="button">

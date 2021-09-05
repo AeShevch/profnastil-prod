@@ -6,6 +6,7 @@ import StickySidebar from "sticky-sidebar";
 import { addToCart } from "./utils/addToCart";
 import { fetchWishlistAction } from "./api/api-actions/fetchWishlistAction";
 import { callWishlistAction } from "./utils/callWishlistAction";
+import { callCompareAction } from "./utils/callCompareAction";
 
 window.Vue = Vue;
 document.addEventListener(`DOMContentLoaded`, () => {
@@ -41,7 +42,10 @@ document.addEventListener(`DOMContentLoaded`, () => {
         `.js-toggle-in-wishlist`
       );
 
-      if (addToWishButtonElement && addToWishButtonElement.ariaPressed === `true`) {
+      if (
+        addToWishButtonElement &&
+        addToWishButtonElement.ariaPressed === `true`
+      ) {
         callWishlistAction(addToWishButtonElement).then(() =>
           addToCart(evt, cartPriceElement)
         );
@@ -59,6 +63,16 @@ document.addEventListener(`DOMContentLoaded`, () => {
   addToWishButtonElements.forEach((addToWishButton) =>
     addToWishButton.addEventListener(`click`, ({ target }) =>
       callWishlistAction(target)
+    )
+  );
+
+  // Add to compare
+  const toggleCompareButtonElements = document.querySelectorAll(
+    `.js-toggle-compare`
+  );
+  toggleCompareButtonElements.forEach((toggleCompareButton) =>
+    toggleCompareButton.addEventListener(`click`, ({ target }) =>
+      callCompareAction(target)
     )
   );
 });
